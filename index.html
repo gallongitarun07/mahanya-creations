@@ -1,321 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Mahanya Creations | Customized Gifts</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mahanya Creations | Customized Gifts</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+        }
 
-<style>
+        header {
+            background: #222;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
 
-*{
-  box-sizing:border-box;
-  margin:0;
-  padding:0;
-  font-family:'Poppins',sans-serif;
-}
+        nav {
+            background: #444;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px;
+        }
 
-body{
-  background:#f8f9fc;
-}
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
 
-/* HEADER */
+        nav a:hover {
+            text-decoration: underline;
+        }
 
-header{
-  background:#111;
-  color:white;
-  padding:15px;
-  text-align:center;
-}
+        .hero {
+            background: linear-gradient(to right, #ff512f, #f09819);
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+        }
 
-header h1{
-  font-size:26px;
-}
+        .section {
+            padding: 40px 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
 
-/* NAV */
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
 
-nav{
-  background:#ff416c;
-  display:flex;
-  justify-content:center;
-  flex-wrap:wrap;
-}
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
 
-nav a{
-  color:white;
-  padding:12px 18px;
-  text-decoration:none;
-  font-weight:500;
-}
+        .card {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            text-align: center;
+        }
 
-nav a:hover{
-  background:#e63b5f;
-}
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
 
-/* HERO */
+        .btn {
+            padding: 12px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+        }
 
-.hero{
-  background:linear-gradient(to right,#ff416c,#ff4b2b);
-  color:white;
-  text-align:center;
-  padding:80px 20px;
-}
+        .call {
+            background: #2196F3;
+        }
 
-.hero h2{
-  font-size:32px;
-  margin-bottom:10px;
-}
+        .whatsapp {
+            background: #25D366;
+        }
 
-.hero p{
-  font-size:16px;
-  margin-bottom:25px;
-}
+        .map {
+            margin-top: 30px;
+            border-radius: 10px;
+            overflow: hidden;
+        }
 
-.hero a{
-  background:white;
-  color:#ff416c;
-  padding:12px 25px;
-  border-radius:25px;
-  text-decoration:none;
-  font-weight:600;
-}
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 40px;
+        }
 
-/* SERVICES */
+        iframe {
+            width: 100%;
+            height: 350px;
+            border: 0;
+        }
 
-.services{
-  padding:40px 15px;
-  text-align:center;
-}
-
-.services h2{
-  margin-bottom:25px;
-  font-size:26px;
-}
-
-.service-box{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:20px;
-}
-
-.service{
-  background:white;
-  padding:20px;
-  border-radius:12px;
-  box-shadow:0 4px 12px rgba(0,0,0,0.1);
-}
-
-/* WHY US */
-
-.why{
-  background:#fff0f3;
-  padding:40px 20px;
-  text-align:center;
-}
-
-.why-list{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-  gap:15px;
-}
-
-.why-item{
-  background:white;
-  padding:15px;
-  border-radius:10px;
-}
-
-/* CONTACT */
-
-.contact{
-  padding:40px 20px;
-  text-align:center;
-}
-
-/* MAP */
-
-.map-section{
-  padding:40px 20px;
-  background:white;
-  text-align:center;
-}
-
-/* FOOTER */
-
-footer{
-  background:#111;
-  color:white;
-  text-align:center;
-  padding:12px;
-  font-size:14px;
-}
-
-/* FLOATING BUTTONS */
-
-.floating-buttons{
-  position:fixed;
-  bottom:20px;
-  right:20px;
-  display:flex;
-  flex-direction:column;
-  gap:12px;
-  z-index:9999;
-}
-
-.float-btn{
-  width:55px;
-  height:55px;
-  border-radius:50%;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  font-size:26px;
-  color:white;
-  text-decoration:none;
-  box-shadow:0 4px 10px rgba(0,0,0,0.3);
-}
-
-.whatsapp{
-  background:#25D366;
-}
-
-.call{
-  background:#007bff;
-}
-
-</style>
+        @media (max-width: 600px) {
+            .hero {
+                padding: 30px 15px;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<header>
-  <h1>Mahanya Creations</h1>
-  <p>Customized Gifts & Printing Shop</p>
-</header>
+    <!-- Header -->
+    <header>
+        <h1>Mahanya Creations</h1>
+        <p>Customized Gifts & Printing Shop</p>
+    </header>
 
-<!-- NAV -->
-<nav>
-  <a href="#">Home</a>
-  <a href="#services">Services</a>
-  <a href="#why">Why Us</a>
-  <a href="#contact">Contact</a>
-  <a href="#map">Location</a>
-</nav>
+    <!-- Menu -->
+    <nav>
+        <a href="#home">Home</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact</a>
+        <a href="#location">Location</a>
+    </nav>
 
-<!-- HERO -->
-<section class="hero">
-  <h2>Create Your Memories With Us ❤️</h2>
-  <p>Personalized Gifts • Printing • Creative Designs</p>
+    <!-- Home -->
+    <section class="hero" id="home">
+        <h2>Your Memories, Our Creativity ❤️</h2>
+        <p>We design beautiful customized gifts for every occasion.</p>
+    </section>
 
-  <a href="https://wa.me/918639358343">Order on WhatsApp</a>
-</section>
+    <!-- Services -->
+    <section class="section" id="services">
+        <h2>Our Services</h2>
 
-<!-- SERVICES -->
-<section class="services" id="services">
+        <div class="services">
 
-<h2>Our Services</h2>
+            <div class="card">🖼 Customized Photo Frames</div>
+            <div class="card">👕 T-Shirt Printing</div>
+            <div class="card">🖨 Flexi Printing</div>
+            <div class="card">💡 Laser Printing</div>
+            <div class="card">🔑 Customized Keychains</div>
+            <div class="card">🛏 Magic Pillow Printing</div>
+            <div class="card">✨ LED Lighting Boards</div>
 
-<div class="service-box">
+        </div>
+    </section>
 
-<div class="service">
-<h3>📸 Photo Frames</h3>
-<p>High quality customized photo frames.</p>
-</div>
+    <!-- Contact -->
+    <section class="section" id="contact">
+        <h2>Contact Us</h2>
 
-<div class="service">
-<h3>👕 T-Shirt Printing</h3>
-<p>Personalized t-shirts with your design.</p>
-</div>
+        <p style="text-align:center;">
+            📞 Phone: <strong>8639358343</strong><br>
+            📍 Gajuwaka, Visakhapatnam
+        </p>
 
-<div class="service">
-<h3>🖨️ Flex Printing</h3>
-<p>Large banners and flex printing.</p>
-</div>
+        <div class="contact-buttons">
 
-<div class="service">
-<h3>💡 Lighting Boards</h3>
-<p>LED customized display boards.</p>
-</div>
+            <!-- Call Button -->
+            <a href="tel:8639358343" class="btn call">
+                📞 Call Now
+            </a>
 
-<div class="service">
-<h3>🔑 Keychains</h3>
-<p>Printed keychains for gifting.</p>
-</div>
+            <!-- WhatsApp Button -->
+            <a href="https://wa.me/918639358343" target="_blank" class="btn whatsapp">
+                💬 WhatsApp
+            </a>
 
-<div class="service">
-<h3>🛏️ Magic Pillow</h3>
-<p>Color-changing magic pillows.</p>
-</div>
+        </div>
+    </section>
 
-</div>
+    <!-- Location -->
+    <section class="section" id="location">
+        <h2>Our Location</h2>
 
-</section>
+        <div class="map">
 
-<!-- WHY US -->
-<section class="why" id="why">
+            <!-- Google Map Embed -->
+            <iframe 
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3801.162272599469!2d83.2212233749421!3d17.68979278324987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a39692eec653e97%3A0x868815300d14f8fd!2smahanya%20creations!5e0!3m2!1sen!2sin!4v1770447843379!5m2!1sen!2sin"
+                allowfullscreen=""
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
 
-<h2>Why Choose Us?</h2>
+        </div>
+    </section>
 
-<div class="why-list">
-
-<div class="why-item">✅ Premium Quality</div>
-<div class="why-item">⚡ Fast Delivery</div>
-<div class="why-item">💰 Affordable Price</div>
-<div class="why-item">❤️ Customer Satisfaction</div>
-
-</div>
-
-</section>
-
-<!-- CONTACT -->
-<section class="contact" id="contact">
-
-<h2>Contact & Order</h2>
-
-<p>📞 Call / WhatsApp for Custom Orders</p>
-<p><strong>+91 8639358343</strong></p>
-
-</section>
-
-<!-- MAP -->
-<section class="map-section" id="map">
-
-<h2>Find Us on Google Map 📍</h2>
-
-<div style="max-width:900px;margin:auto;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.15);">
-
-<iframe
-src="https://www.google.com/maps?q=https://maps.app.goo.gl/bL8dAePB6L8crp438&output=embed"
-width="100%"
-height="350"
-style="border:0;"
-allowfullscreen=""
-loading="lazy">
-</iframe>
-
-</div>
-
-</section>
-
-<!-- FOOTER -->
-<footer>
-© 2026 Mahanya Creations | All Rights Reserved
-</footer>
-
-<!-- FLOATING BUTTONS -->
-<div class="floating-buttons">
-
-<a href="https://wa.me/918639358343" class="float-btn whatsapp" target="_blank">
-💬
-</a>
-
-<a href="tel:8639358343" class="float-btn call">
-📞
-</a>
-
-</div>
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Mahanya Creations | All Rights Reserved</p>
+    </footer>
 
 </body>
 </html>
