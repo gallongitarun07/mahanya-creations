@@ -1,200 +1,321 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Mahanya Creations | Customized Gifts</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Mahanya Creations | Customized Gifts</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f5f5f5;
-    }
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
-    header {
-      background: #222;
-      color: white;
-      padding: 15px;
-      text-align: center;
-    }
+<style>
 
-    nav {
-      background: #444;
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 10px;
-      flex-wrap: wrap;
-    }
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+  font-family:'Poppins',sans-serif;
+}
 
-    nav a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-    }
+body{
+  background:#f8f9fc;
+}
 
-    .hero {
-      background: linear-gradient(to right, #ff416c, #ff4b2b);
-      color: white;
-      text-align: center;
-      padding: 60px 20px;
-    }
+/* HEADER */
 
-    .products {
-      padding: 30px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
+header{
+  background:#111;
+  color:white;
+  padding:15px;
+  text-align:center;
+}
 
-    .card {
-      background: white;
-      padding: 15px;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      text-align: center;
-    }
+header h1{
+  font-size:26px;
+}
 
-    .card img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 5px;
-    }
+/* NAV */
 
-    .btn {
-      display: inline-block;
-      margin-top: 10px;
-      background: #ff416c;
-      color: white;
-      padding: 8px 15px;
-      border-radius: 5px;
-      text-decoration: none;
-    }
+nav{
+  background:#ff416c;
+  display:flex;
+  justify-content:center;
+  flex-wrap:wrap;
+}
 
-    footer {
-      background: #222;
-      color: white;
-      text-align: center;
-      padding: 10px;
-      margin-top: 20px;
-    }
+nav a{
+  color:white;
+  padding:12px 18px;
+  text-decoration:none;
+  font-weight:500;
+}
 
-    .about-box {
-      background: white;
-      padding: 30px;
-      line-height: 1.6;
-    }
-  </style>
+nav a:hover{
+  background:#e63b5f;
+}
+
+/* HERO */
+
+.hero{
+  background:linear-gradient(to right,#ff416c,#ff4b2b);
+  color:white;
+  text-align:center;
+  padding:80px 20px;
+}
+
+.hero h2{
+  font-size:32px;
+  margin-bottom:10px;
+}
+
+.hero p{
+  font-size:16px;
+  margin-bottom:25px;
+}
+
+.hero a{
+  background:white;
+  color:#ff416c;
+  padding:12px 25px;
+  border-radius:25px;
+  text-decoration:none;
+  font-weight:600;
+}
+
+/* SERVICES */
+
+.services{
+  padding:40px 15px;
+  text-align:center;
+}
+
+.services h2{
+  margin-bottom:25px;
+  font-size:26px;
+}
+
+.service-box{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
+}
+
+.service{
+  background:white;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* WHY US */
+
+.why{
+  background:#fff0f3;
+  padding:40px 20px;
+  text-align:center;
+}
+
+.why-list{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+  gap:15px;
+}
+
+.why-item{
+  background:white;
+  padding:15px;
+  border-radius:10px;
+}
+
+/* CONTACT */
+
+.contact{
+  padding:40px 20px;
+  text-align:center;
+}
+
+/* MAP */
+
+.map-section{
+  padding:40px 20px;
+  background:white;
+  text-align:center;
+}
+
+/* FOOTER */
+
+footer{
+  background:#111;
+  color:white;
+  text-align:center;
+  padding:12px;
+  font-size:14px;
+}
+
+/* FLOATING BUTTONS */
+
+.floating-buttons{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+  z-index:9999;
+}
+
+.float-btn{
+  width:55px;
+  height:55px;
+  border-radius:50%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size:26px;
+  color:white;
+  text-decoration:none;
+  box-shadow:0 4px 10px rgba(0,0,0,0.3);
+}
+
+.whatsapp{
+  background:#25D366;
+}
+
+.call{
+  background:#007bff;
+}
+
+</style>
 </head>
 
 <body>
 
+<!-- HEADER -->
 <header>
   <h1>Mahanya Creations</h1>
   <p>Customized Gifts & Printing Shop</p>
 </header>
 
+<!-- NAV -->
 <nav>
   <a href="#">Home</a>
-  <a href="#products">Products</a>
-  <a href="#about">About</a>
+  <a href="#services">Services</a>
+  <a href="#why">Why Us</a>
   <a href="#contact">Contact</a>
+  <a href="#map">Location</a>
 </nav>
 
+<!-- HERO -->
 <section class="hero">
   <h2>Create Your Memories With Us ❤️</h2>
-  <p>Customized Frames • T-Shirts • Gifts • Printing</p>
+  <p>Personalized Gifts • Printing • Creative Designs</p>
+
+  <a href="https://wa.me/919391398958">Order on WhatsApp</a>
 </section>
 
-<!-- PRODUCTS SECTION -->
-<section class="products" id="products">
+<!-- SERVICES -->
+<section class="services" id="services">
 
-  <div class="card">
-    <img src="https://via.placeholder.com/300" alt="Photo Frame">
-    <h3>Customized Photo Frames</h3>
-    <a href="https://wa.me/918639358343" class="btn">Order Now</a>
-  </div>
+<h2>Our Services</h2>
 
-  <div class="card">
-    <img src="https://via.placeholder.com/300" alt="T-shirt">
-    <h3>Customized T-Shirt Printing</h3>
-    <a href="https://wa.me/918639358343" class="btn">Order Now</a>
-  </div>
+<div class="service-box">
 
-  <div class="card">
-    <img src="https://via.placeholder.com/300" alt="Flex Printing">
-    <h3>Flexi Printing</h3>
-    <a href="https://wa.me/918639358343" class="btn">Order Now</a>
-  </div>
+<div class="service">
+<h3>📸 Photo Frames</h3>
+<p>High quality customized photo frames.</p>
+</div>
 
-  <div class="card">
-    <img src="https://via.placeholder.com/300" alt="Laser Printing">
-    <h3>Laser Printing</h3>
-    <a href="https://wa.me/918639358343" class="btn">Order Now</a>
-  </div>
+<div class="service">
+<h3>👕 T-Shirt Printing</h3>
+<p>Personalized t-shirts with your design.</p>
+</div>
 
-  <div class="card">
-    <img src="https://via.placeholder.com/300" alt="Keychain">
-    <h3>Customized Keychain Printing</h3>
-    <a href="https://wa.me/918639358343" class="btn">Order Now</a>
-  </div>
+<div class="service">
+<h3>🖨️ Flex Printing</h3>
+<p>Large banners and flex printing.</p>
+</div>
 
-  <div class="card">
-    <img src="https://via.placeholder.com/300" alt="Magic Pillow">
-    <h3>Customized Magic Pillow Printing</h3>
-    <a href="https://wa.me/918639358343" class="btn">Order Now</a>
-  </div>
+<div class="service">
+<h3>💡 Lighting Boards</h3>
+<p>LED customized display boards.</p>
+</div>
 
-  <div class="card">
-    <img src="https://via.placeholder.com/300" alt="Lighting Board">
-    <h3>Customized Lighting Boards</h3>
-    <a href="https://wa.me/918639358343" class="btn">Order Now</a>
-  </div>
+<div class="service">
+<h3>🔑 Keychains</h3>
+<p>Printed keychains for gifting.</p>
+</div>
+
+<div class="service">
+<h3>🛏️ Magic Pillow</h3>
+<p>Color-changing magic pillows.</p>
+</div>
+
+</div>
 
 </section>
 
-<!-- ABOUT SECTION -->
-<section id="about" class="about-box">
-  <h2>About Us</h2>
+<!-- WHY US -->
+<section class="why" id="why">
 
-  <p>
-    Welcome to <strong>Mahanya Creations</strong>, your trusted destination for
-    high-quality customized gifts and printing services.
-    We believe that every gift tells a story, and we help you
-    create memorable moments for your loved ones.
-  </p>
+<h2>Why Choose Us?</h2>
 
-  <p>
-    We specialize in personalized photo frames, customized t-shirts,
-    keychains, magic pillows, lighting boards, flex printing, and laser printing.
-    Each product is designed with care, creativity, and attention to detail.
-  </p>
+<div class="why-list">
 
-  <p>
-    Our mission is to provide affordable, attractive, and durable customized
-    products with fast service and complete customer satisfaction.
-    Whether it is for birthdays, weddings, anniversaries, or corporate gifts,
-    we are here to make your moments special.
-  </p>
+<div class="why-item">✅ Premium Quality</div>
+<div class="why-item">⚡ Fast Delivery</div>
+<div class="why-item">💰 Affordable Price</div>
+<div class="why-item">❤️ Customer Satisfaction</div>
 
-  <p>
-    At Mahanya Creations, your happiness is our priority ❤️
-  </p>
+</div>
+
 </section>
 
-<!-- CONTACT SECTION -->
-<section id="contact" style="padding:30px;">
-  <h2>Contact Us</h2>
-  <p>📞 WhatsApp: +91 8639358343</p>
-  <p>📍 Location: Gajuwaka depo, Vishakapatnam</p>
-  <p>⏰ Open: 9 AM – 9 PM</p>
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+<h2>Contact & Order</h2>
+
+<p>📞 Call / WhatsApp for Custom Orders</p>
+<p><strong>+91 9391398958</strong></p>
+
 </section>
 
+<!-- MAP -->
+<section class="map-section" id="map">
+
+<h2>Find Us on Google Map 📍</h2>
+
+<div style="max-width:900px;margin:auto;border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,0.15);">
+
+<iframe
+src="https://www.google.com/maps?q=16.506964,80.648055&z=16&output=embed"
+width="100%"
+height="350"
+style="border:0;"
+allowfullscreen=""
+loading="lazy">
+</iframe>
+
+</div>
+
+</section>
+
+<!-- FOOTER -->
 <footer>
-  <p>© 2026 Mahanya Creations | All Rights Reserved</p>
+© 2026 Mahanya Creations | All Rights Reserved
 </footer>
+
+<!-- FLOATING BUTTONS -->
+<div class="floating-buttons">
+
+<a href="https://wa.me/919391398958" class="float-btn whatsapp" target="_blank">
+💬
+</a>
+
+<a href="tel:9391398958" class="float-btn call">
+📞
+</a>
+
+</div>
 
 </body>
 </html>
