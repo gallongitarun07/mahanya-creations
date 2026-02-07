@@ -3,6 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Mahanya Creations</title>
 
 <style>
@@ -14,7 +15,6 @@ body{
 }
 
 /* HEADER */
-
 header{
   background:#222;
   color:white;
@@ -23,13 +23,13 @@ header{
 }
 
 /* NAV */
-
 nav{
   background:#ff416c;
   display:flex;
   justify-content:center;
   gap:20px;
   padding:10px;
+  flex-wrap:wrap;
 }
 
 nav a{
@@ -39,7 +39,6 @@ nav a{
 }
 
 /* HERO */
-
 .hero{
   background:linear-gradient(to right,#ff416c,#ff4b2b);
   color:white;
@@ -48,10 +47,9 @@ nav a{
 }
 
 /* PRODUCTS */
-
 .products{
   padding:40px 20px;
-  max-width:1100px;
+  max-width:1200px;
   margin:auto;
 }
 
@@ -68,11 +66,10 @@ nav a{
 
 .product{
   background:white;
-  padding:20px;
-  border-radius:8px;
-  text-align:center;
-  cursor:pointer;
+  border-radius:10px;
+  overflow:hidden;
   box-shadow:0 0 10px rgba(0,0,0,0.1);
+  cursor:pointer;
   transition:0.3s;
 }
 
@@ -80,8 +77,18 @@ nav a{
   transform:scale(1.05);
 }
 
-/* MODAL */
+.product img{
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
 
+.product h3{
+  padding:10px;
+  text-align:center;
+}
+
+/* MODAL */
 .modal{
   display:none;
   position:fixed;
@@ -113,7 +120,6 @@ nav a{
 }
 
 /* CONTACT */
-
 .contact{
   text-align:center;
   padding:40px 20px;
@@ -121,34 +127,37 @@ nav a{
 
 .btn{
   padding:12px 20px;
-  background:#25D366;
-  color:white;
-  text-decoration:none;
   border-radius:5px;
+  text-decoration:none;
+  color:white;
   font-weight:bold;
   display:inline-block;
   margin:5px;
 }
 
-.call{
-  background:#2196F3;
+.call{background:#2196F3;}
+.whatsapp{background:#25D366;}
+
+/* MAP */
+.map-section{
+  padding:40px 20px;
+  background:white;
+  text-align:center;
+}
+
+iframe{
+  width:100%;
+  height:350px;
+  border:0;
+  border-radius:10px;
 }
 
 /* FOOTER */
-
 footer{
   background:#222;
   color:white;
   text-align:center;
   padding:15px;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:600px){
-  nav{
-    flex-wrap:wrap;
-  }
 }
 
 </style>
@@ -167,12 +176,13 @@ footer{
 <a href="#">Home</a>
 <a href="#products">Products</a>
 <a href="#contact">Contact</a>
+<a href="#map">Location</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
 <h2>Your Memories, Our Creativity ❤️</h2>
-<p>Click any product to see details</p>
+<p>Click any product to see sizes & details</p>
 </section>
 
 <!-- PRODUCTS -->
@@ -183,31 +193,33 @@ footer{
 <div class="product-grid">
 
 <div class="product" onclick="openModal('frame')">
-🖼 Photo Frames
+<img src="https://source.unsplash.com/400x300/?photo,frame" />
+<h3>Photo Frames</h3>
 </div>
 
 <div class="product" onclick="openModal('tshirt')">
-👕 T-Shirts
+<img src="https://source.unsplash.com/400x300/?tshirt,printing" />
+<h3>T-Shirts</h3>
 </div>
 
 <div class="product" onclick="openModal('keychain')">
-🔑 Keychains
+<img src="https://source.unsplash.com/400x300/?keychain" />
+<h3>Keychains</h3>
 </div>
 
 <div class="product" onclick="openModal('pillow')">
-🛏 Magic Pillows
+<img src="https://source.unsplash.com/400x300/?pillow,design" />
+<h3>Magic Pillows</h3>
 </div>
 
 <div class="product" onclick="openModal('flex')">
-🖨 Flex Printing
-</div>
-
-<div class="product" onclick="openModal('laser')">
-💡 Laser Printing
+<img src="https://source.unsplash.com/400x300/?banner,printing" />
+<h3>Flex Printing</h3>
 </div>
 
 <div class="product" onclick="openModal('board')">
-✨ Lighting Boards
+<img src="https://source.unsplash.com/400x300/?led,signboard" />
+<h3>Lighting Boards</h3>
 </div>
 
 </div>
@@ -223,7 +235,19 @@ footer{
 
 <a href="tel:9391398958" class="btn call">Call</a>
 
-<a href="https://wa.me/919391398958" class="btn">WhatsApp</a>
+<a href="https://wa.me/919391398958" class="btn whatsapp">WhatsApp</a>
+
+</section>
+
+<!-- MAP -->
+<section class="map-section" id="map">
+
+<h2>Find Us 📍</h2>
+
+<iframe 
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3801.162272599469!2d83.2212233749421!3d17.68979278324987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a39692eec653e97%3A0x868815300d14f8fd!2smahanya%20creations!5e0!3m2!1sen!2sin!4v1770447843379!5m2!1sen!2sin"
+loading="lazy">
+</iframe>
 
 </section>
 
@@ -240,7 +264,6 @@ footer{
 <span class="close" onclick="closeModal()">×</span>
 
 <h3 id="modal-title"></h3>
-
 <div id="modal-body"></div>
 
 </div>
@@ -251,88 +274,77 @@ footer{
 
 function openModal(type){
 
-  let title="";
-  let content="";
+let title="";
+let content="";
 
-  if(type=="frame"){
-    title="Customized Photo Frames";
-    content=`
-    <ul>
-      <li>Sizes: 6x8, 8x10, 12x18, 16x24</li>
-      <li>Types: Wooden, Acrylic, Glass</li>
-      <li>Finish: Matte / Glossy</li>
-    </ul>`;
-  }
+if(type=="frame"){
+title="Photo Frames";
+content=`
+<ul>
+<li>Sizes: 6x8, 8x10, 12x18, 16x24</li>
+<li>Types: Wooden, Glass, Acrylic</li>
+<li>Finish: Matte / Glossy</li>
+</ul>`;
+}
 
-  if(type=="tshirt"){
-    title="Customized T-Shirts";
-    content=`
-    <ul>
-      <li>Sizes: S, M, L, XL, XXL</li>
-      <li>Type: Half / Full Hands</li>
-      <li>Colors: Black, White, Red, Blue</li>
-      <li>Print: Photo / Logo / Text</li>
-    </ul>`;
-  }
+if(type=="tshirt"){
+title="T-Shirts";
+content=`
+<ul>
+<li>Sizes: S, M, L, XL, XXL</li>
+<li>Type: Half / Full Sleeve</li>
+<li>Colors: Black, White, Red, Blue</li>
+<li>Print: Photo / Logo</li>
+</ul>`;
+}
 
-  if(type=="keychain"){
-    title="Customized Keychains";
-    content=`
-    <ul>
-      <li>Types: Metal, Acrylic, Wooden</li>
-      <li>Shape: Round, Square, Heart</li>
-      <li>Print: Photo / Name</li>
-    </ul>`;
-  }
+if(type=="keychain"){
+title="Keychains";
+content=`
+<ul>
+<li>Metal / Acrylic / Wooden</li>
+<li>Round / Square / Heart</li>
+<li>Name & Photo Print</li>
+</ul>`;
+}
 
-  if(type=="pillow"){
-    title="Magic Pillow Printing";
-    content=`
-    <ul>
-      <li>Size: 12x12, 16x16</li>
-      <li>Color Change Pillow</li>
-      <li>Photo Printing Available</li>
-    </ul>`;
-  }
+if(type=="pillow"){
+title="Magic Pillows";
+content=`
+<ul>
+<li>Size: 12x12, 16x16</li>
+<li>Color Changing</li>
+<li>Photo Printing</li>
+</ul>`;
+}
 
-  if(type=="flex"){
-    title="Flex Printing";
-    content=`
-    <ul>
-      <li>Sizes: Custom</li>
-      <li>Usage: Banners, Posters</li>
-      <li>Outdoor / Indoor Quality</li>
-    </ul>`;
-  }
+if(type=="flex"){
+title="Flex Printing";
+content=`
+<ul>
+<li>Banner & Poster Printing</li>
+<li>Custom Size</li>
+<li>Outdoor / Indoor</li>
+</ul>`;
+}
 
-  if(type=="laser"){
-    title="Laser Printing";
-    content=`
-    <ul>
-      <li>Paper: A4, A3</li>
-      <li>Color / Black & White</li>
-      <li>High Quality Print</li>
-    </ul>`;
-  }
+if(type=="board"){
+title="Lighting Boards";
+content=`
+<ul>
+<li>LED Boards</li>
+<li>Custom Logo/Text</li>
+<li>Multiple Sizes</li>
+</ul>`;
+}
 
-  if(type=="board"){
-    title="Lighting Boards";
-    content=`
-    <ul>
-      <li>LED Boards</li>
-      <li>Custom Text / Logo</li>
-      <li>Different Sizes Available</li>
-    </ul>`;
-  }
-
-  document.getElementById("modal-title").innerText=title;
-  document.getElementById("modal-body").innerHTML=content;
-
-  document.getElementById("modal").style.display="flex";
+document.getElementById("modal-title").innerText=title;
+document.getElementById("modal-body").innerHTML=content;
+document.getElementById("modal").style.display="flex";
 }
 
 function closeModal(){
-  document.getElementById("modal").style.display="none";
+document.getElementById("modal").style.display="none";
 }
 
 </script>
