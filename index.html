@@ -11,63 +11,75 @@
 body{
   margin:0;
   font-family:Arial, sans-serif;
-  background:#f1f3f6;
+  background:#f5f5f5;
 }
 
 /* HEADER */
 header{
-  background:#2874f0;
+  background:#222;
   color:white;
   text-align:center;
-  padding:15px;
-  font-size:20px;
+  padding:20px;
+}
+
+/* NAV */
+nav{
+  background:#ff416c;
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  padding:10px;
+  flex-wrap:wrap;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
   font-weight:bold;
 }
 
-/* SEARCH */
-.search-bar{
-  padding:10px;
-  background:white;
-}
-
-.search-bar input{
-  width:100%;
-  padding:10px;
-  border:1px solid #ccc;
-  border-radius:5px;
+/* HERO */
+.hero{
+  background:linear-gradient(to right,#ff416c,#ff4b2b);
+  color:white;
+  text-align:center;
+  padding:50px 20px;
 }
 
 /* PRODUCTS */
 .products{
-  padding:15px;
+  padding:40px 20px;
+  max-width:1200px;
+  margin:auto;
+}
+
+.products h2{
+  text-align:center;
+  margin-bottom:25px;
 }
 
 .product-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
-  gap:15px;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:20px;
 }
 
 .product{
   background:white;
-  border-radius:5px;
+  border-radius:10px;
   overflow:hidden;
-  box-shadow:0 2px 5px rgba(0,0,0,0.1);
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+  text-align:center;
 }
 
 .product img{
   width:100%;
-  height:170px;
+  height:180px;
   object-fit:cover;
 }
 
-.product-info{
-  padding:10px;
-}
-
-.product-info h4{
-  margin:5px 0;
-  font-size:14px;
+.product h3{
+  margin:10px 0 5px;
 }
 
 .price{
@@ -76,14 +88,13 @@ header{
 }
 
 .btn{
-  display:block;
   background:#ff9f00;
   color:black;
-  text-align:center;
-  padding:8px;
-  margin-top:8px;
-  text-decoration:none;
-  border-radius:3px;
+  padding:8px 12px;
+  border-radius:5px;
+  display:inline-block;
+  margin:10px 0;
+  cursor:pointer;
   font-weight:bold;
 }
 
@@ -103,7 +114,7 @@ header{
   width:90%;
   max-width:400px;
   padding:20px;
-  border-radius:5px;
+  border-radius:8px;
 }
 
 select,input{
@@ -120,16 +131,38 @@ select,input{
   padding:10px;
   margin-top:10px;
   font-size:16px;
-  border-radius:3px;
+  border-radius:5px;
+}
+
+/* CONTACT */
+.contact{
+  text-align:center;
+  padding:40px 20px;
+}
+
+.call{background:#2196F3;color:white;}
+.whatsapp{background:#25D366;color:white;}
+
+/* MAP */
+.map-section{
+  padding:40px 20px;
+  background:white;
+  text-align:center;
+}
+
+iframe{
+  width:100%;
+  height:350px;
+  border:0;
+  border-radius:10px;
 }
 
 /* FOOTER */
 footer{
-  background:#2874f0;
+  background:#222;
   color:white;
   text-align:center;
-  padding:10px;
-  margin-top:20px;
+  padding:15px;
 }
 
 </style>
@@ -139,62 +172,96 @@ footer{
 
 <!-- HEADER -->
 <header>
-Mahanya Creations 🛒
+<h1>Mahanya Creations</h1>
+<p>Customized Gifts & Printing Shop</p>
 </header>
 
-<!-- SEARCH -->
-<div class="search-bar">
-<input type="text" placeholder="Search products...">
-</div>
+<!-- NAV -->
+<nav>
+<a href="#">Home</a>
+<a href="#products">Products</a>
+<a href="#contact">Contact</a>
+<a href="#map">Location</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+<h2>Your Memories, Our Creativity ❤️</h2>
+<p>Choose your product and customize</p>
+</section>
 
 <!-- PRODUCTS -->
-<section class="products">
+<section class="products" id="products">
+
+<h2>Our Products</h2>
 
 <div class="product-grid">
 
 <!-- TSHIRT -->
 <div class="product">
 <img src="https://source.unsplash.com/400x300/?tshirt,design">
-<div class="product-info">
-<h4>Customized T-Shirt</h4>
+<h3>T-Shirt Printing</h3>
 <p class="price">From ₹499</p>
-<a class="btn" onclick="openModal('tshirt')">Customize</a>
-</div>
+<div class="btn" onclick="openModal('tshirt')">Customize</div>
 </div>
 
 <!-- FRAME -->
 <div class="product">
 <img src="https://source.unsplash.com/400x300/?photo,frame">
-<div class="product-info">
-<h4>Photo Frame</h4>
+<h3>Photo Frame</h3>
 <p class="price">From ₹399</p>
-<a class="btn" onclick="openModal('frame')">Customize</a>
-</div>
+<div class="btn" onclick="openModal('frame')">Customize</div>
 </div>
 
 <!-- PILLOW -->
 <div class="product">
 <img src="https://source.unsplash.com/400x300/?pillow,design">
-<div class="product-info">
-<h4>Magic Pillow</h4>
+<h3>Magic Pillow</h3>
 <p class="price">From ₹599</p>
-<a class="btn" onclick="openModal('pillow')">Customize</a>
-</div>
+<div class="btn" onclick="openModal('pillow')">Customize</div>
 </div>
 
 <!-- KEYCHAIN -->
 <div class="product">
 <img src="https://source.unsplash.com/400x300/?keychain">
-<div class="product-info">
-<h4>Keychain</h4>
+<h3>Keychain</h3>
 <p class="price">From ₹199</p>
-<a class="btn" onclick="openModal('keychain')">Customize</a>
-</div>
+<div class="btn" onclick="openModal('keychain')">Customize</div>
 </div>
 
 </div>
 
 </section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+
+<h2>Contact Us</h2>
+
+<p>📞 9391398958</p>
+
+<a href="tel:9391398958" class="btn call">Call</a>
+
+<a href="https://wa.me/919391398958" class="btn whatsapp">WhatsApp</a>
+
+</section>
+
+<!-- MAP -->
+<section class="map-section" id="map">
+
+<h2>Find Us 📍</h2>
+
+<iframe 
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3801.162272599469!2d83.2212233749421!3d17.68979278324987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a39692eec653e97%3A0x868815300d14f8fd!2smahanya%20creations!5e0!3m2!1sen!2sin!4v1770447843379!5m2!1sen!2sin"
+loading="lazy">
+</iframe>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+© 2026 Mahanya Creations
+</footer>
 
 <!-- MODAL -->
 <div class="modal" id="modal">
@@ -209,11 +276,6 @@ Mahanya Creations 🛒
 
 </div>
 </div>
-
-<!-- FOOTER -->
-<footer>
-© 2026 Mahanya Creations
-</footer>
 
 <script>
 
