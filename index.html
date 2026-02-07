@@ -11,146 +11,125 @@
 body{
   margin:0;
   font-family:Arial, sans-serif;
-  background:#f5f5f5;
+  background:#f1f3f6;
 }
 
 /* HEADER */
 header{
-  background:#222;
+  background:#2874f0;
   color:white;
   text-align:center;
-  padding:20px;
-}
-
-/* NAV */
-nav{
-  background:#ff416c;
-  display:flex;
-  justify-content:center;
-  gap:20px;
-  padding:10px;
-  flex-wrap:wrap;
-}
-
-nav a{
-  color:white;
-  text-decoration:none;
+  padding:15px;
+  font-size:20px;
   font-weight:bold;
 }
 
-/* HERO */
-.hero{
-  background:linear-gradient(to right,#ff416c,#ff4b2b);
-  color:white;
-  text-align:center;
-  padding:50px 20px;
+/* SEARCH */
+.search-bar{
+  padding:10px;
+  background:white;
+}
+
+.search-bar input{
+  width:100%;
+  padding:10px;
+  border:1px solid #ccc;
+  border-radius:5px;
 }
 
 /* PRODUCTS */
 .products{
-  padding:40px 20px;
-  max-width:1200px;
-  margin:auto;
+  padding:15px;
 }
 
 .product-grid{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
-  gap:20px;
+  grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+  gap:15px;
 }
 
 .product{
   background:white;
-  border-radius:10px;
+  border-radius:5px;
   overflow:hidden;
-  box-shadow:0 0 10px rgba(0,0,0,0.1);
-  cursor:pointer;
-  transition:0.3s;
-  text-align:center;
-}
-
-.product:hover{
-  transform:scale(1.05);
+  box-shadow:0 2px 5px rgba(0,0,0,0.1);
 }
 
 .product img{
   width:100%;
-  height:180px;
+  height:170px;
   object-fit:cover;
 }
 
-.product h3{
+.product-info{
   padding:10px;
+}
+
+.product-info h4{
+  margin:5px 0;
+  font-size:14px;
+}
+
+.price{
+  color:green;
+  font-weight:bold;
+}
+
+.btn{
+  display:block;
+  background:#ff9f00;
+  color:black;
+  text-align:center;
+  padding:8px;
+  margin-top:8px;
+  text-decoration:none;
+  border-radius:3px;
+  font-weight:bold;
 }
 
 /* MODAL */
 .modal{
   display:none;
   position:fixed;
-  top:0;
-  left:0;
-  width:100%;
-  height:100%;
+  inset:0;
   background:rgba(0,0,0,0.6);
   justify-content:center;
   align-items:center;
   z-index:1000;
 }
 
-.modal-content{
+.modal-box{
   background:white;
   width:90%;
-  max-width:450px;
-  padding:25px;
-  border-radius:10px;
-  position:relative;
-}
-
-.close{
-  position:absolute;
-  top:10px;
-  right:15px;
-  font-size:22px;
-  cursor:pointer;
+  max-width:400px;
+  padding:20px;
+  border-radius:5px;
 }
 
 select,input{
   width:100%;
   padding:8px;
-  margin:8px 0;
+  margin:6px 0;
 }
 
 .order-btn{
   width:100%;
   background:#25D366;
   color:white;
-  padding:12px;
   border:none;
-  border-radius:5px;
+  padding:10px;
+  margin-top:10px;
   font-size:16px;
-  cursor:pointer;
-}
-
-/* MAP */
-.map-section{
-  padding:40px 20px;
-  background:white;
-  text-align:center;
-}
-
-iframe{
-  width:100%;
-  height:350px;
-  border:0;
-  border-radius:10px;
+  border-radius:3px;
 }
 
 /* FOOTER */
 footer{
-  background:#222;
+  background:#2874f0;
   color:white;
   text-align:center;
-  padding:15px;
+  padding:10px;
+  margin-top:20px;
 }
 
 </style>
@@ -160,128 +139,179 @@ footer{
 
 <!-- HEADER -->
 <header>
-<h1>Mahanya Creations</h1>
-<p>Customized Gifts & Printing Shop</p>
+Mahanya Creations 🛒
 </header>
 
-<!-- NAV -->
-<nav>
-<a href="#">Home</a>
-<a href="#products">Products</a>
-<a href="#map">Location</a>
-</nav>
-
-<!-- HERO -->
-<section class="hero">
-<h2>Your Memories, Our Creativity ❤️</h2>
-<p>Select product & customize</p>
-</section>
+<!-- SEARCH -->
+<div class="search-bar">
+<input type="text" placeholder="Search products...">
+</div>
 
 <!-- PRODUCTS -->
-<section class="products" id="products">
-
-<h2>Our Products</h2>
+<section class="products">
 
 <div class="product-grid">
 
 <!-- TSHIRT -->
-<div class="product" onclick="openTshirt()">
-<img src="https://source.unsplash.com/400x300/?tshirt" />
-<h3>Customized T-Shirts</h3>
+<div class="product">
+<img src="https://source.unsplash.com/400x300/?tshirt,design">
+<div class="product-info">
+<h4>Customized T-Shirt</h4>
+<p class="price">From ₹499</p>
+<a class="btn" onclick="openModal('tshirt')">Customize</a>
+</div>
 </div>
 
 <!-- FRAME -->
 <div class="product">
-<img src="https://source.unsplash.com/400x300/?photo,frame" />
-<h3>Photo Frames</h3>
+<img src="https://source.unsplash.com/400x300/?photo,frame">
+<div class="product-info">
+<h4>Photo Frame</h4>
+<p class="price">From ₹399</p>
+<a class="btn" onclick="openModal('frame')">Customize</a>
+</div>
+</div>
+
+<!-- PILLOW -->
+<div class="product">
+<img src="https://source.unsplash.com/400x300/?pillow,design">
+<div class="product-info">
+<h4>Magic Pillow</h4>
+<p class="price">From ₹599</p>
+<a class="btn" onclick="openModal('pillow')">Customize</a>
+</div>
+</div>
+
+<!-- KEYCHAIN -->
+<div class="product">
+<img src="https://source.unsplash.com/400x300/?keychain">
+<div class="product-info">
+<h4>Keychain</h4>
+<p class="price">From ₹199</p>
+<a class="btn" onclick="openModal('keychain')">Customize</a>
+</div>
 </div>
 
 </div>
 
 </section>
 
-<!-- MAP -->
-<section class="map-section" id="map">
+<!-- MODAL -->
+<div class="modal" id="modal">
 
-<h2>Find Us 📍</h2>
+<div class="modal-box">
 
-<iframe 
-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3801.162272599469!2d83.2212233749421!3d17.68979278324987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a39692eec653e97%3A0x868815300d14f8fd!2smahanya%20creations!5e0!3m2!1sen!2sin!4v1770447843379!5m2!1sen!2sin"
-loading="lazy">
-</iframe>
+<h3 id="modalTitle"></h3>
 
-</section>
+<div id="modalBody"></div>
+
+<button onclick="closeModal()">Close</button>
+
+</div>
+</div>
 
 <!-- FOOTER -->
 <footer>
 © 2026 Mahanya Creations
 </footer>
 
-<!-- TSHIRT MODAL -->
-<div class="modal" id="tshirtModal">
+<script>
 
-<div class="modal-content">
+function openModal(type){
 
-<span class="close" onclick="closeTshirt()">×</span>
+let title="";
+let body="";
 
-<h3>Customize Your T-Shirt</h3>
-
+if(type=="tshirt"){
+title="Customize T-Shirt";
+body=`
 <label>Color</label>
 <select id="color">
-<option>Black</option>
-<option>White</option>
-<option>Red</option>
-<option>Blue</option>
-<option>Grey</option>
+<option>Black</option><option>White</option><option>Red</option>
 </select>
 
 <label>Size</label>
 <select id="size">
-<option>S</option>
-<option>M</option>
-<option>L</option>
-<option>XL</option>
-<option>XXL</option>
-</select>
-
-<label>Sleeve Type</label>
-<select id="sleeve">
-<option>Half Sleeve</option>
-<option>Full Sleeve</option>
+<option>S</option><option>M</option><option>L</option><option>XL</option>
 </select>
 
 <label>Quantity</label>
-<input type="number" id="qty" value="1" min="1">
+<input type="number" id="qty" value="1">
 
-<button class="order-btn" onclick="orderTshirt()">
+<button class="order-btn" onclick="order('T-Shirt')">
 Order on WhatsApp
 </button>
-
-</div>
-</div>
-
-<!-- SCRIPT -->
-<script>
-
-function openTshirt(){
-document.getElementById("tshirtModal").style.display="flex";
+`;
 }
 
-function closeTshirt(){
-document.getElementById("tshirtModal").style.display="none";
+if(type=="frame"){
+title="Customize Photo Frame";
+body=`
+<label>Size</label>
+<select id="size">
+<option>8x10</option><option>12x18</option><option>16x24</option>
+</select>
+
+<label>Frame Type</label>
+<select id="type">
+<option>Wooden</option><option>Glass</option>
+</select>
+
+<button class="order-btn" onclick="order('Photo Frame')">
+Order on WhatsApp
+</button>
+`;
 }
 
-function orderTshirt(){
+if(type=="pillow"){
+title="Customize Magic Pillow";
+body=`
+<label>Size</label>
+<select id="size">
+<option>12x12</option><option>16x16</option>
+</select>
 
-let color=document.getElementById("color").value;
-let size=document.getElementById("size").value;
-let sleeve=document.getElementById("sleeve").value;
-let qty=document.getElementById("qty").value;
+<button class="order-btn" onclick="order('Magic Pillow')">
+Order on WhatsApp
+</button>
+`;
+}
 
-let msg=`Hi, I want Customized T-Shirt:
+if(type=="keychain"){
+title="Customize Keychain";
+body=`
+<label>Type</label>
+<select id="type">
+<option>Metal</option><option>Acrylic</option>
+</select>
+
+<button class="order-btn" onclick="order('Keychain')">
+Order on WhatsApp
+</button>
+`;
+}
+
+document.getElementById("modalTitle").innerText=title;
+document.getElementById("modalBody").innerHTML=body;
+document.getElementById("modal").style.display="flex";
+}
+
+function closeModal(){
+document.getElementById("modal").style.display="none";
+}
+
+function order(product){
+
+let color=document.getElementById("color")?.value || "";
+let size=document.getElementById("size")?.value || "";
+let type=document.getElementById("type")?.value || "";
+let qty=document.getElementById("qty")?.value || "1";
+
+let msg=`Hi, I want to order:
+Product: ${product}
 Color: ${color}
 Size: ${size}
-Sleeve: ${sleeve}
+Type: ${type}
 Quantity: ${qty}`;
 
 let url="https://wa.me/919391398958?text="+encodeURIComponent(msg);
