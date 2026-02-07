@@ -53,11 +53,6 @@ nav a{
   margin:auto;
 }
 
-.products h2{
-  text-align:center;
-  margin-bottom:25px;
-}
-
 .product-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
@@ -71,6 +66,7 @@ nav a{
   box-shadow:0 0 10px rgba(0,0,0,0.1);
   cursor:pointer;
   transition:0.3s;
+  text-align:center;
 }
 
 .product:hover{
@@ -85,7 +81,6 @@ nav a{
 
 .product h3{
   padding:10px;
-  text-align:center;
 }
 
 /* MODAL */
@@ -119,24 +114,22 @@ nav a{
   cursor:pointer;
 }
 
-/* CONTACT */
-.contact{
-  text-align:center;
-  padding:40px 20px;
+select,input{
+  width:100%;
+  padding:8px;
+  margin:8px 0;
 }
 
-.btn{
-  padding:12px 20px;
-  border-radius:5px;
-  text-decoration:none;
+.order-btn{
+  width:100%;
+  background:#25D366;
   color:white;
-  font-weight:bold;
-  display:inline-block;
-  margin:5px;
+  padding:12px;
+  border:none;
+  border-radius:5px;
+  font-size:16px;
+  cursor:pointer;
 }
-
-.call{background:#2196F3;}
-.whatsapp{background:#25D366;}
 
 /* MAP */
 .map-section{
@@ -175,14 +168,13 @@ footer{
 <nav>
 <a href="#">Home</a>
 <a href="#products">Products</a>
-<a href="#contact">Contact</a>
 <a href="#map">Location</a>
 </nav>
 
 <!-- HERO -->
 <section class="hero">
 <h2>Your Memories, Our Creativity ❤️</h2>
-<p>Click any product to see sizes & details</p>
+<p>Select product & customize</p>
 </section>
 
 <!-- PRODUCTS -->
@@ -192,50 +184,19 @@ footer{
 
 <div class="product-grid">
 
-<div class="product" onclick="openModal('frame')">
+<!-- TSHIRT -->
+<div class="product" onclick="openTshirt()">
+<img src="https://source.unsplash.com/400x300/?tshirt" />
+<h3>Customized T-Shirts</h3>
+</div>
+
+<!-- FRAME -->
+<div class="product">
 <img src="https://source.unsplash.com/400x300/?photo,frame" />
 <h3>Photo Frames</h3>
 </div>
 
-<div class="product" onclick="openModal('tshirt')">
-<img src="https://source.unsplash.com/400x300/?tshirt,printing" />
-<h3>T-Shirts</h3>
 </div>
-
-<div class="product" onclick="openModal('keychain')">
-<img src="https://source.unsplash.com/400x300/?keychain" />
-<h3>Keychains</h3>
-</div>
-
-<div class="product" onclick="openModal('pillow')">
-<img src="https://source.unsplash.com/400x300/?pillow,design" />
-<h3>Magic Pillows</h3>
-</div>
-
-<div class="product" onclick="openModal('flex')">
-<img src="https://source.unsplash.com/400x300/?banner,printing" />
-<h3>Flex Printing</h3>
-</div>
-
-<div class="product" onclick="openModal('board')">
-<img src="https://source.unsplash.com/400x300/?led,signboard" />
-<h3>Lighting Boards</h3>
-</div>
-
-</div>
-
-</section>
-
-<!-- CONTACT -->
-<section class="contact" id="contact">
-
-<h2>Contact Us</h2>
-
-<p>📞 9391398958</p>
-
-<a href="tel:9391398958" class="btn call">Call</a>
-
-<a href="https://wa.me/919391398958" class="btn whatsapp">WhatsApp</a>
 
 </section>
 
@@ -256,15 +217,45 @@ loading="lazy">
 © 2026 Mahanya Creations
 </footer>
 
-<!-- MODAL -->
-<div class="modal" id="modal">
+<!-- TSHIRT MODAL -->
+<div class="modal" id="tshirtModal">
 
 <div class="modal-content">
 
-<span class="close" onclick="closeModal()">×</span>
+<span class="close" onclick="closeTshirt()">×</span>
 
-<h3 id="modal-title"></h3>
-<div id="modal-body"></div>
+<h3>Customize Your T-Shirt</h3>
+
+<label>Color</label>
+<select id="color">
+<option>Black</option>
+<option>White</option>
+<option>Red</option>
+<option>Blue</option>
+<option>Grey</option>
+</select>
+
+<label>Size</label>
+<select id="size">
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>XL</option>
+<option>XXL</option>
+</select>
+
+<label>Sleeve Type</label>
+<select id="sleeve">
+<option>Half Sleeve</option>
+<option>Full Sleeve</option>
+</select>
+
+<label>Quantity</label>
+<input type="number" id="qty" value="1" min="1">
+
+<button class="order-btn" onclick="orderTshirt()">
+Order on WhatsApp
+</button>
 
 </div>
 </div>
@@ -272,79 +263,31 @@ loading="lazy">
 <!-- SCRIPT -->
 <script>
 
-function openModal(type){
-
-let title="";
-let content="";
-
-if(type=="frame"){
-title="Photo Frames";
-content=`
-<ul>
-<li>Sizes: 6x8, 8x10, 12x18, 16x24</li>
-<li>Types: Wooden, Glass, Acrylic</li>
-<li>Finish: Matte / Glossy</li>
-</ul>`;
+function openTshirt(){
+document.getElementById("tshirtModal").style.display="flex";
 }
 
-if(type=="tshirt"){
-title="T-Shirts";
-content=`
-<ul>
-<li>Sizes: S, M, L, XL, XXL</li>
-<li>Type: Half / Full Sleeve</li>
-<li>Colors: Black, White, Red, Blue</li>
-<li>Print: Photo / Logo</li>
-</ul>`;
+function closeTshirt(){
+document.getElementById("tshirtModal").style.display="none";
 }
 
-if(type=="keychain"){
-title="Keychains";
-content=`
-<ul>
-<li>Metal / Acrylic / Wooden</li>
-<li>Round / Square / Heart</li>
-<li>Name & Photo Print</li>
-</ul>`;
-}
+function orderTshirt(){
 
-if(type=="pillow"){
-title="Magic Pillows";
-content=`
-<ul>
-<li>Size: 12x12, 16x16</li>
-<li>Color Changing</li>
-<li>Photo Printing</li>
-</ul>`;
-}
+let color=document.getElementById("color").value;
+let size=document.getElementById("size").value;
+let sleeve=document.getElementById("sleeve").value;
+let qty=document.getElementById("qty").value;
 
-if(type=="flex"){
-title="Flex Printing";
-content=`
-<ul>
-<li>Banner & Poster Printing</li>
-<li>Custom Size</li>
-<li>Outdoor / Indoor</li>
-</ul>`;
-}
+let msg=`Hi, I want Customized T-Shirt:
+Color: ${color}
+Size: ${size}
+Sleeve: ${sleeve}
+Quantity: ${qty}`;
 
-if(type=="board"){
-title="Lighting Boards";
-content=`
-<ul>
-<li>LED Boards</li>
-<li>Custom Logo/Text</li>
-<li>Multiple Sizes</li>
-</ul>`;
-}
+let url="https://wa.me/919391398958?text="+encodeURIComponent(msg);
 
-document.getElementById("modal-title").innerText=title;
-document.getElementById("modal-body").innerHTML=content;
-document.getElementById("modal").style.display="flex";
-}
+window.open(url,"_blank");
 
-function closeModal(){
-document.getElementById("modal").style.display="none";
 }
 
 </script>
