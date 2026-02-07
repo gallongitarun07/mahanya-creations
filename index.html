@@ -1,210 +1,341 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mahanya Creations | Customized Gifts</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mahanya Creations</title>
 
-    <style>
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f5f5f5;
-        }
+<style>
 
-        header {
-            background: #222;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#f5f5f5;
+}
 
-        nav {
-            background: #444;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            padding: 10px;
-        }
+/* HEADER */
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            font-weight: bold;
-        }
+header{
+  background:#222;
+  color:white;
+  text-align:center;
+  padding:20px;
+}
 
-        nav a:hover {
-            text-decoration: underline;
-        }
+/* NAV */
 
-        .hero {
-            background: linear-gradient(to right, #ff512f, #f09819);
-            color: white;
-            text-align: center;
-            padding: 50px 20px;
-        }
+nav{
+  background:#ff416c;
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  padding:10px;
+}
 
-        .section {
-            padding: 40px 20px;
-            max-width: 1000px;
-            margin: auto;
-        }
+nav a{
+  color:white;
+  text-decoration:none;
+  font-weight:bold;
+}
 
-        h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
+/* HERO */
 
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
+.hero{
+  background:linear-gradient(to right,#ff416c,#ff4b2b);
+  color:white;
+  text-align:center;
+  padding:50px 20px;
+}
 
-        .card {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            text-align: center;
-        }
+/* PRODUCTS */
 
-        .contact-buttons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
+.products{
+  padding:40px 20px;
+  max-width:1100px;
+  margin:auto;
+}
 
-        .btn {
-            padding: 12px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            color: white;
-            font-weight: bold;
-        }
+.products h2{
+  text-align:center;
+  margin-bottom:25px;
+}
 
-        .call {
-            background: #2196F3;
-        }
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+  gap:20px;
+}
 
-        .whatsapp {
-            background: #25D366;
-        }
+.product{
+  background:white;
+  padding:20px;
+  border-radius:8px;
+  text-align:center;
+  cursor:pointer;
+  box-shadow:0 0 10px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
 
-        .map {
-            margin-top: 30px;
-            border-radius: 10px;
-            overflow: hidden;
-        }
+.product:hover{
+  transform:scale(1.05);
+}
 
-        footer {
-            background: #222;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 40px;
-        }
+/* MODAL */
 
-        iframe {
-            width: 100%;
-            height: 350px;
-            border: 0;
-        }
+.modal{
+  display:none;
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.6);
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+}
 
-        @media (max-width: 600px) {
-            .hero {
-                padding: 30px 15px;
-            }
-        }
-    </style>
+.modal-content{
+  background:white;
+  width:90%;
+  max-width:450px;
+  padding:25px;
+  border-radius:10px;
+  position:relative;
+}
+
+.close{
+  position:absolute;
+  top:10px;
+  right:15px;
+  font-size:22px;
+  cursor:pointer;
+}
+
+/* CONTACT */
+
+.contact{
+  text-align:center;
+  padding:40px 20px;
+}
+
+.btn{
+  padding:12px 20px;
+  background:#25D366;
+  color:white;
+  text-decoration:none;
+  border-radius:5px;
+  font-weight:bold;
+  display:inline-block;
+  margin:5px;
+}
+
+.call{
+  background:#2196F3;
+}
+
+/* FOOTER */
+
+footer{
+  background:#222;
+  color:white;
+  text-align:center;
+  padding:15px;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:600px){
+  nav{
+    flex-wrap:wrap;
+  }
+}
+
+</style>
 </head>
 
 <body>
 
-    <!-- Header -->
-    <header>
-        <h1>Mahanya Creations</h1>
-        <p>Customized Gifts & Printing Shop</p>
-    </header>
+<!-- HEADER -->
+<header>
+<h1>Mahanya Creations</h1>
+<p>Customized Gifts & Printing Shop</p>
+</header>
 
-    <!-- Menu -->
-    <nav>
-        <a href="#home">Home</a>
-        <a href="#services">Services</a>
-        <a href="#contact">Contact</a>
-        <a href="#location">Location</a>
-    </nav>
+<!-- NAV -->
+<nav>
+<a href="#">Home</a>
+<a href="#products">Products</a>
+<a href="#contact">Contact</a>
+</nav>
 
-    <!-- Home -->
-    <section class="hero" id="home">
-        <h2>Your Memories, Our Creativity ❤️</h2>
-        <p>We design beautiful customized gifts for every occasion.</p>
-    </section>
+<!-- HERO -->
+<section class="hero">
+<h2>Your Memories, Our Creativity ❤️</h2>
+<p>Click any product to see details</p>
+</section>
 
-    <!-- Services -->
-    <section class="section" id="services">
-        <h2>Our Services</h2>
+<!-- PRODUCTS -->
+<section class="products" id="products">
 
-        <div class="services">
+<h2>Our Products</h2>
 
-            <div class="card">🖼 Customized Photo Frames</div>
-            <div class="card">👕 T-Shirt Printing</div>
-            <div class="card">🖨 Flexi Printing</div>
-            <div class="card">💡 Laser Printing</div>
-            <div class="card">🔑 Customized Keychains</div>
-            <div class="card">🛏 Magic Pillow Printing</div>
-            <div class="card">✨ LED Lighting Boards</div>
+<div class="product-grid">
 
-        </div>
-    </section>
+<div class="product" onclick="openModal('frame')">
+🖼 Photo Frames
+</div>
 
-    <!-- Contact -->
-    <section class="section" id="contact">
-        <h2>Contact Us</h2>
+<div class="product" onclick="openModal('tshirt')">
+👕 T-Shirts
+</div>
 
-        <p style="text-align:center;">
-            📞 Phone: <strong>9391398958</strong><br>
-            📍 Gajuwaka, Visakhapatnam
-        </p>
+<div class="product" onclick="openModal('keychain')">
+🔑 Keychains
+</div>
 
-        <div class="contact-buttons">
+<div class="product" onclick="openModal('pillow')">
+🛏 Magic Pillows
+</div>
 
-            <!-- Call Button -->
-            <a href="tel:9391398958" class="btn call">
-                📞 Call Now
-            </a>
+<div class="product" onclick="openModal('flex')">
+🖨 Flex Printing
+</div>
 
-            <!-- WhatsApp Button -->
-            <a href="https://wa.me/919391398958" target="_blank" class="btn whatsapp">
-                💬 WhatsApp
-            </a>
+<div class="product" onclick="openModal('laser')">
+💡 Laser Printing
+</div>
 
-        </div>
-    </section>
+<div class="product" onclick="openModal('board')">
+✨ Lighting Boards
+</div>
 
-    <!-- Location -->
-    <section class="section" id="location">
-        <h2>Our Location</h2>
+</div>
 
-        <div class="map">
+</section>
 
-            <!-- Google Map Embed -->
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3801.162272599469!2d83.2212233749421!3d17.68979278324987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a39692eec653e97%3A0x868815300d14f8fd!2smahanya%20creations!5e0!3m2!1sen!2sin!4v1770447843379!5m2!1sen!2sin"
-                allowfullscreen=""
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade">
-            </iframe>
+<!-- CONTACT -->
+<section class="contact" id="contact">
 
-        </div>
-    </section>
+<h2>Contact Us</h2>
 
-    <!-- Footer -->
-    <footer>
-        <p>© 2026 Mahanya Creations | All Rights Reserved</p>
-    </footer>
+<p>📞 9391398958</p>
+
+<a href="tel:9391398958" class="btn call">Call</a>
+
+<a href="https://wa.me/919391398958" class="btn">WhatsApp</a>
+
+</section>
+
+<!-- FOOTER -->
+<footer>
+© 2026 Mahanya Creations
+</footer>
+
+<!-- MODAL -->
+<div class="modal" id="modal">
+
+<div class="modal-content">
+
+<span class="close" onclick="closeModal()">×</span>
+
+<h3 id="modal-title"></h3>
+
+<div id="modal-body"></div>
+
+</div>
+</div>
+
+<!-- SCRIPT -->
+<script>
+
+function openModal(type){
+
+  let title="";
+  let content="";
+
+  if(type=="frame"){
+    title="Customized Photo Frames";
+    content=`
+    <ul>
+      <li>Sizes: 6x8, 8x10, 12x18, 16x24</li>
+      <li>Types: Wooden, Acrylic, Glass</li>
+      <li>Finish: Matte / Glossy</li>
+    </ul>`;
+  }
+
+  if(type=="tshirt"){
+    title="Customized T-Shirts";
+    content=`
+    <ul>
+      <li>Sizes: S, M, L, XL, XXL</li>
+      <li>Type: Half / Full Hands</li>
+      <li>Colors: Black, White, Red, Blue</li>
+      <li>Print: Photo / Logo / Text</li>
+    </ul>`;
+  }
+
+  if(type=="keychain"){
+    title="Customized Keychains";
+    content=`
+    <ul>
+      <li>Types: Metal, Acrylic, Wooden</li>
+      <li>Shape: Round, Square, Heart</li>
+      <li>Print: Photo / Name</li>
+    </ul>`;
+  }
+
+  if(type=="pillow"){
+    title="Magic Pillow Printing";
+    content=`
+    <ul>
+      <li>Size: 12x12, 16x16</li>
+      <li>Color Change Pillow</li>
+      <li>Photo Printing Available</li>
+    </ul>`;
+  }
+
+  if(type=="flex"){
+    title="Flex Printing";
+    content=`
+    <ul>
+      <li>Sizes: Custom</li>
+      <li>Usage: Banners, Posters</li>
+      <li>Outdoor / Indoor Quality</li>
+    </ul>`;
+  }
+
+  if(type=="laser"){
+    title="Laser Printing";
+    content=`
+    <ul>
+      <li>Paper: A4, A3</li>
+      <li>Color / Black & White</li>
+      <li>High Quality Print</li>
+    </ul>`;
+  }
+
+  if(type=="board"){
+    title="Lighting Boards";
+    content=`
+    <ul>
+      <li>LED Boards</li>
+      <li>Custom Text / Logo</li>
+      <li>Different Sizes Available</li>
+    </ul>`;
+  }
+
+  document.getElementById("modal-title").innerText=title;
+  document.getElementById("modal-body").innerHTML=content;
+
+  document.getElementById("modal").style.display="flex";
+}
+
+function closeModal(){
+  document.getElementById("modal").style.display="none";
+}
+
+</script>
 
 </body>
 </html>
