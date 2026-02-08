@@ -229,6 +229,46 @@ footer{
 <div class="btn" onclick="openModal('keychain')">Customize</div>
 </div>
 
+<!-- LASER -->
+<div class="product">
+<img src="https://source.unsplash.com/400x300/?laser,printing">
+<h3>Laser Printing</h3>
+<p class="price">From ₹99</p>
+<div class="btn" onclick="openModal('laser')">Customize</div>
+</div>
+
+<!-- FLEX -->
+<div class="product">
+<img src="https://source.unsplash.com/400x300/?flex,banner">
+<h3>Flex Printing</h3>
+<p class="price">From ₹199</p>
+<div class="btn" onclick="openModal('flex')">Customize</div>
+</div>
+
+<!-- MUG -->
+<div class="product">
+<img src="https://source.unsplash.com/400x300/?custom,mug">
+<h3>Mug Printing</h3>
+<p class="price">From ₹299</p>
+<div class="btn" onclick="openModal('mug')">Customize</div>
+</div>
+
+<!-- LIGHT BOARD -->
+<div class="product">
+<img src="https://source.unsplash.com/400x300/?led,signboard">
+<h3>Lighting Board</h3>
+<p class="price">From ₹999</p>
+<div class="btn" onclick="openModal('light')">Customize</div>
+</div>
+
+<!-- FOAM BOARD -->
+<div class="product">
+<img src="https://source.unsplash.com/400x300/?foam,board,print">
+<h3>Foam Board Printing</h3>
+<p class="price">From ₹499</p>
+<div class="btn" onclick="openModal('foam')">Customize</div>
+</div>
+
 </div>
 
 </section>
@@ -300,9 +340,7 @@ body=`
 <label>Quantity</label>
 <input type="number" id="qty" value="1">
 
-<button class="order-btn" onclick="order('T-Shirt')">
-Order on WhatsApp
-</button>
+<button class="order-btn" onclick="order('T-Shirt')">Order</button>
 `;
 }
 
@@ -319,9 +357,7 @@ body=`
 <option>Wooden</option><option>Glass</option>
 </select>
 
-<button class="order-btn" onclick="order('Photo Frame')">
-Order on WhatsApp
-</button>
+<button class="order-btn" onclick="order('Photo Frame')">Order</button>
 `;
 }
 
@@ -333,9 +369,7 @@ body=`
 <option>12x12</option><option>16x16</option>
 </select>
 
-<button class="order-btn" onclick="order('Magic Pillow')">
-Order on WhatsApp
-</button>
+<button class="order-btn" onclick="order('Magic Pillow')">Order</button>
 `;
 }
 
@@ -347,9 +381,72 @@ body=`
 <option>Metal</option><option>Acrylic</option>
 </select>
 
-<button class="order-btn" onclick="order('Keychain')">
-Order on WhatsApp
-</button>
+<button class="order-btn" onclick="order('Keychain')">Order</button>
+`;
+}
+
+if(type=="laser"){
+title="Customize Laser Printing";
+body=`
+<label>Paper Size</label>
+<select id="size">
+<option>A4</option><option>A3</option>
+</select>
+
+<label>Print Type</label>
+<select id="type">
+<option>B/W</option><option>Color</option>
+</select>
+
+<button class="order-btn" onclick="order('Laser Printing')">Order</button>
+`;
+}
+
+if(type=="flex"){
+title="Customize Flex Printing";
+body=`
+<label>Size</label>
+<select id="size">
+<option>2x3 ft</option><option>3x4 ft</option><option>4x6 ft</option>
+</select>
+
+<button class="order-btn" onclick="order('Flex Printing')">Order</button>
+`;
+}
+
+if(type=="mug"){
+title="Customize Mug Printing";
+body=`
+<label>Color</label>
+<select id="color">
+<option>White</option><option>Magic Mug</option>
+</select>
+
+<button class="order-btn" onclick="order('Mug Printing')">Order</button>
+`;
+}
+
+if(type=="light"){
+title="Customize Lighting Board";
+body=`
+<label>Size</label>
+<select id="size">
+<option>Small</option><option>Medium</option><option>Large</option>
+</select>
+
+<button class="order-btn" onclick="order('Lighting Board')">Order</button>
+`;
+}
+
+if(type=="foam"){
+title="Customize Foam Board";
+body=`
+<label>Size</label>
+<select id="size">
+<option>A3</option><option>A2</option><option>A1</option>
+</select>
+
+<button class="order-btn" onclick="order('Foam Board Printing')">Order</button>
 `;
 }
 
