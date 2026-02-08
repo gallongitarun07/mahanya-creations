@@ -26,14 +26,12 @@ body{
   align-items:center;
   text-align:center;
   color:white;
-  position:relative;
-  overflow:hidden;
 }
 
 .welcome-card{
   background:rgba(255,255,255,0.1);
   backdrop-filter:blur(12px);
-  padding:50px 40px;
+  padding:40px;
   border-radius:20px;
   box-shadow:0 10px 40px rgba(0,0,0,0.4);
   max-width:400px;
@@ -42,28 +40,8 @@ body{
 
 /* Intro Logo */
 .intro-logo{
-  width:130px;
-  height:auto;
+  width:120px;
   margin-bottom:15px;
-}
-
-.welcome-card h1{
-  font-size:36px;
-  letter-spacing:4px;
-  margin:5px 0;
-}
-
-.welcome-card h2{
-  font-size:28px;
-  margin:5px 0 15px;
-  color:#ffb347;
-  letter-spacing:3px;
-}
-
-.welcome-card p{
-  font-size:16px;
-  margin-bottom:25px;
-  opacity:0.9;
 }
 
 .start-btn{
@@ -75,11 +53,6 @@ body{
   font-size:17px;
   font-weight:bold;
   cursor:pointer;
-  transition:0.3s;
-}
-
-.start-btn:hover{
-  transform:scale(1.05);
 }
 
 /* ================= MAIN SITE ================= */
@@ -93,26 +66,16 @@ body{
 header{
   background:#222;
   color:white;
-  padding:12px 20px;
+  padding:12px;
   display:flex;
-  align-items:center;
   justify-content:center;
-  gap:12px;
+  align-items:center;
+  gap:10px;
 }
 
-/* Header Logo */
 .header-logo{
   width:45px;
-  height:45px;
-  object-fit:contain;
 }
-
-header h1{
-  margin:0;
-  font-size:22px;
-}
-
-/* NAV */
 
 nav{
   background:#ff416c;
@@ -120,7 +83,6 @@ nav{
   justify-content:center;
   gap:20px;
   padding:10px;
-  flex-wrap:wrap;
 }
 
 nav a{
@@ -129,26 +91,19 @@ nav a{
   font-weight:bold;
 }
 
-/* HERO */
-
 .hero{
   background:linear-gradient(to right,#ff416c,#ff4b2b);
   color:white;
   text-align:center;
-  padding:40px 20px;
+  padding:40px;
 }
 
 /* PRODUCTS */
 
 .products{
-  padding:40px 20px;
+  padding:40px;
   max-width:1200px;
   margin:auto;
-}
-
-.products h2{
-  text-align:center;
-  margin-bottom:25px;
 }
 
 .product-grid{
@@ -160,9 +115,9 @@ nav a{
 .product{
   background:white;
   border-radius:10px;
-  overflow:hidden;
   box-shadow:0 0 10px rgba(0,0,0,0.1);
   text-align:center;
+  overflow:hidden;
 }
 
 .product img{
@@ -171,24 +126,14 @@ nav a{
   object-fit:cover;
 }
 
-.product h3{
-  margin:10px 0 5px;
-}
-
-.price{
-  color:green;
-  font-weight:bold;
-}
-
 .btn{
   background:#ff9f00;
-  color:black;
   padding:8px 12px;
   border-radius:5px;
-  display:inline-block;
-  margin:10px 0;
   cursor:pointer;
   font-weight:bold;
+  margin:10px;
+  display:inline-block;
 }
 
 /* MODAL */
@@ -200,7 +145,6 @@ nav a{
   background:rgba(0,0,0,0.6);
   justify-content:center;
   align-items:center;
-  z-index:1000;
 }
 
 .modal-box{
@@ -211,7 +155,7 @@ nav a{
   border-radius:8px;
 }
 
-select,input{
+select{
   width:100%;
   padding:8px;
   margin:6px 0;
@@ -232,7 +176,7 @@ select,input{
 
 .contact{
   text-align:center;
-  padding:40px 20px;
+  padding:40px;
 }
 
 .call{background:#2196F3;color:white;}
@@ -241,7 +185,7 @@ select,input{
 /* MAP */
 
 .map-section{
-  padding:40px 20px;
+  padding:40px;
   background:white;
   text-align:center;
 }
@@ -267,14 +211,13 @@ footer{
 
 <body>
 
-<!-- =============== INTRO PAGE =============== -->
+<!-- INTRO PAGE -->
 
 <section id="welcome">
 
 <div class="welcome-card">
 
-<!-- LOGO -->
-<img src="images/logo.png" class="intro-logo" alt="Mahanya Logo">
+<img src="images/logo.png" class="intro-logo">
 
 <h1>MAHANYA</h1>
 <h2>CREATIONS</h2>
@@ -289,17 +232,13 @@ Get Started →
 
 </section>
 
-<!-- =============== MAIN WEBSITE =============== -->
+<!-- MAIN WEBSITE -->
 
 <div id="main">
 
 <header>
-
-<!-- HEADER LOGO -->
-<img src="images/logo.png" class="header-logo" alt="Mahanya Logo">
-
+<img src="images/logo.png" class="header-logo">
 <h1>Mahanya Creations</h1>
-
 </header>
 
 <nav>
@@ -322,30 +261,26 @@ Get Started →
 <div class="product-grid">
 
 <div class="product">
-<img src="https://source.unsplash.com/400x300/?tshirt,design">
+<img src="https://source.unsplash.com/400x300/?tshirt">
 <h3>T-Shirt Printing</h3>
-<p class="price">From ₹499</p>
 <div class="btn" onclick="openModal('tshirt')">Customize</div>
 </div>
 
 <div class="product">
 <img src="https://source.unsplash.com/400x300/?photo,frame">
 <h3>Photo Frame</h3>
-<p class="price">From ₹399</p>
 <div class="btn" onclick="openModal('frame')">Customize</div>
 </div>
 
 <div class="product">
-<img src="https://source.unsplash.com/400x300/?custom,mug">
+<img src="https://source.unsplash.com/400x300/?mug">
 <h3>Mug Printing</h3>
-<p class="price">From ₹299</p>
 <div class="btn" onclick="openModal('mug')">Customize</div>
 </div>
 
 <div class="product">
 <img src="https://source.unsplash.com/400x300/?led,signboard">
-<h3>Lighting Board</h3>
-<p class="price">From ₹999</p>
+<h3>Light Board</h3>
 <div class="btn" onclick="openModal('light')">Customize</div>
 </div>
 
@@ -374,7 +309,7 @@ Get Started →
 <h2>Find Us 📍</h2>
 
 <iframe 
-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3801.162272599469!2d83.2212233749421!3d17.68979278324987!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a39692eec653e97%3A0x868815300d14f8fd!2smahanya%20creations!5e0!3m2!1sen!2sin!4v1770447843379!5m2!1sen!2sin"
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3801.162272599469!2d83.2212233749421!3d17.68979278324987"
 loading="lazy">
 </iframe>
 
@@ -405,8 +340,8 @@ loading="lazy">
 /* START */
 
 function startSite(){
-document.getElementById("welcome").style.display="none";
-document.getElementById("main").style.display="block";
+  document.getElementById("welcome").style.display="none";
+  document.getElementById("main").style.display="block";
 }
 
 /* MODAL */
@@ -431,4 +366,83 @@ body=`
 <option>S</option>
 <option>M</option>
 <option>L</option>
-<option>
+<option>XL</option>
+</select>
+
+<button class="order-btn" onclick="order('T-Shirt')">Order</button>
+`;
+}
+
+if(type=="frame"){
+title="Customize Frame";
+body=`
+<label>Size</label>
+<select id="size">
+<option>8x10</option>
+<option>12x18</option>
+<option>16x24</option>
+</select>
+
+<button class="order-btn" onclick="order('Frame')">Order</button>
+`;
+}
+
+if(type=="mug"){
+title="Customize Mug";
+body=`
+<label>Type</label>
+<select id="type">
+<option>White</option>
+<option>Magic Mug</option>
+</select>
+
+<button class="order-btn" onclick="order('Mug')">Order</button>
+`;
+}
+
+if(type=="light"){
+title="Customize Light Board";
+body=`
+<label>Size</label>
+<select id="size">
+<option>Small</option>
+<option>Medium</option>
+<option>Large</option>
+</select>
+
+<button class="order-btn" onclick="order('Light Board')">Order</button>
+`;
+}
+
+document.getElementById("modalTitle").innerText=title;
+document.getElementById("modalBody").innerHTML=body;
+document.getElementById("modal").style.display="flex";
+}
+
+function closeModal(){
+  document.getElementById("modal").style.display="none";
+}
+
+/* ORDER */
+
+function order(product){
+
+let color=document.getElementById("color")?.value || "";
+let size=document.getElementById("size")?.value || "";
+let type=document.getElementById("type")?.value || "";
+
+let msg=`Hi, I want to order:
+Product: ${product}
+Color: ${color}
+Size: ${size}
+Type: ${type}`;
+
+let url="https://wa.me/919391398958?text="+encodeURIComponent(msg);
+
+window.open(url,"_blank");
+}
+
+</script>
+
+</body>
+</html>
