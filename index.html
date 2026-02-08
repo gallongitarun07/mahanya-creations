@@ -16,7 +16,7 @@ body{
   background:#f5f5f5;
 }
 
-/* PREMIUM WELCOME */
+/* ================= INTRO PAGE ================= */
 
 #welcome{
   height:100vh;
@@ -30,33 +30,6 @@ body{
   overflow:hidden;
 }
 
-#welcome::before,
-#welcome::after{
-  content:"";
-  position:absolute;
-  width:300px;
-  height:300px;
-  border-radius:50%;
-  background:rgba(255,255,255,0.08);
-  animation:float 8s infinite alternate;
-}
-
-#welcome::before{
-  top:10%;
-  left:10%;
-}
-
-#welcome::after{
-  bottom:10%;
-  right:10%;
-  animation-delay:4s;
-}
-
-@keyframes float{
-  from{transform:translateY(0);}
-  to{transform:translateY(-40px);}
-}
-
 .welcome-card{
   background:rgba(255,255,255,0.1);
   backdrop-filter:blur(12px);
@@ -67,14 +40,21 @@ body{
   width:90%;
 }
 
+/* Intro Logo */
+.intro-logo{
+  width:130px;
+  height:auto;
+  margin-bottom:15px;
+}
+
 .welcome-card h1{
-  font-size:42px;
-  letter-spacing:6px;
-  margin:0;
+  font-size:36px;
+  letter-spacing:4px;
+  margin:5px 0;
 }
 
 .welcome-card h2{
-  font-size:36px;
+  font-size:28px;
   margin:5px 0 15px;
   color:#ffb347;
   letter-spacing:3px;
@@ -82,7 +62,7 @@ body{
 
 .welcome-card p{
   font-size:16px;
-  margin-bottom:30px;
+  margin-bottom:25px;
   opacity:0.9;
 }
 
@@ -100,24 +80,40 @@ body{
 
 .start-btn:hover{
   transform:scale(1.05);
-  box-shadow:0 6px 20px rgba(255,200,80,0.6);
 }
 
-/* MAIN SITE */
+/* ================= MAIN SITE ================= */
 
 #main{
   display:none;
 }
 
 /* HEADER */
+
 header{
   background:#222;
   color:white;
-  text-align:center;
-  padding:20px;
+  padding:12px 20px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+}
+
+/* Header Logo */
+.header-logo{
+  width:45px;
+  height:45px;
+  object-fit:contain;
+}
+
+header h1{
+  margin:0;
+  font-size:22px;
 }
 
 /* NAV */
+
 nav{
   background:#ff416c;
   display:flex;
@@ -134,6 +130,7 @@ nav a{
 }
 
 /* HERO */
+
 .hero{
   background:linear-gradient(to right,#ff416c,#ff4b2b);
   color:white;
@@ -270,10 +267,14 @@ footer{
 
 <body>
 
-<!-- WELCOME PAGE -->
+<!-- =============== INTRO PAGE =============== -->
+
 <section id="welcome">
 
 <div class="welcome-card">
+
+<!-- LOGO -->
+<img src="images/logo.png" class="intro-logo" alt="Mahanya Logo">
 
 <h1>MAHANYA</h1>
 <h2>CREATIONS</h2>
@@ -288,12 +289,17 @@ Get Started →
 
 </section>
 
-<!-- MAIN WEBSITE -->
+<!-- =============== MAIN WEBSITE =============== -->
+
 <div id="main">
 
 <header>
+
+<!-- HEADER LOGO -->
+<img src="images/logo.png" class="header-logo" alt="Mahanya Logo">
+
 <h1>Mahanya Creations</h1>
-<p>Customized Gifts & Printing Shop</p>
+
 </header>
 
 <nav>
@@ -308,6 +314,7 @@ Get Started →
 </section>
 
 <!-- PRODUCTS -->
+
 <section class="products" id="products">
 
 <h2>Our Products</h2>
@@ -347,6 +354,7 @@ Get Started →
 </section>
 
 <!-- CONTACT -->
+
 <section class="contact" id="contact">
 
 <h2>Contact Us</h2>
@@ -360,6 +368,7 @@ Get Started →
 </section>
 
 <!-- MAP -->
+
 <section class="map-section" id="map">
 
 <h2>Find Us 📍</h2>
@@ -378,6 +387,7 @@ loading="lazy">
 </div>
 
 <!-- MODAL -->
+
 <div class="modal" id="modal">
 
 <div class="modal-box">
@@ -411,84 +421,14 @@ title="Customize T-Shirt";
 body=`
 <label>Color</label>
 <select id="color">
-<option>Black</option><option>White</option><option>Red</option>
+<option>Black</option>
+<option>White</option>
+<option>Red</option>
 </select>
 
 <label>Size</label>
 <select id="size">
-<option>S</option><option>M</option><option>L</option><option>XL</option>
-</select>
-
-<button class="order-btn" onclick="order('T-Shirt')">Order</button>
-`;
-}
-
-if(type=="frame"){
-title="Customize Photo Frame";
-body=`
-<label>Size</label>
-<select id="size">
-<option>8x10</option><option>12x18</option><option>16x24</option>
-</select>
-
-<button class="order-btn" onclick="order('Photo Frame')">Order</button>
-`;
-}
-
-if(type=="mug"){
-title="Customize Mug Printing";
-body=`
-<label>Type</label>
-<select id="type">
-<option>White</option><option>Magic Mug</option>
-</select>
-
-<button class="order-btn" onclick="order('Mug Printing')">Order</button>
-`;
-}
-
-if(type=="light"){
-title="Customize Lighting Board";
-body=`
-<label>Size</label>
-<select id="size">
-<option>Small</option><option>Medium</option><option>Large</option>
-</select>
-
-<button class="order-btn" onclick="order('Lighting Board')">Order</button>
-`;
-}
-
-document.getElementById("modalTitle").innerText=title;
-document.getElementById("modalBody").innerHTML=body;
-document.getElementById("modal").style.display="flex";
-}
-
-function closeModal(){
-document.getElementById("modal").style.display="none";
-}
-
-/* ORDER */
-
-function order(product){
-
-let color=document.getElementById("color")?.value || "";
-let size=document.getElementById("size")?.value || "";
-let type=document.getElementById("type")?.value || "";
-
-let msg=`Hi, I want to order:
-Product: ${product}
-Color: ${color}
-Size: ${size}
-Type: ${type}`;
-
-let url="https://wa.me/919391398958?text="+encodeURIComponent(msg);
-
-window.open(url,"_blank");
-
-}
-
-</script>
-
-</body>
-</html>
+<option>S</option>
+<option>M</option>
+<option>L</option>
+<option>
