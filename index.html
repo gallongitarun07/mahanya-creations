@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,7 +10,6 @@
 <style>
 
 /* COMMON */
-
 body{
   margin:0;
   font-family:Arial, sans-serif;
@@ -20,7 +20,11 @@ body{
 
 #welcome{
   height:100vh;
-  background:linear-gradient(135deg,#0f2027,#203a43,#2c5364);
+  background:
+  linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),
+  url("images/logo.png");
+  background-size:cover;
+  background-position:center;
   display:flex;
   justify-content:center;
   align-items:center;
@@ -29,30 +33,53 @@ body{
 }
 
 .welcome-card{
-  background:rgba(255,255,255,0.1);
-  backdrop-filter:blur(12px);
-  padding:40px;
+  background:rgba(0,0,0,0.6);
+  backdrop-filter:blur(6px);
+  padding:45px 35px;
   border-radius:20px;
-  box-shadow:0 10px 40px rgba(0,0,0,0.4);
-  max-width:400px;
+  box-shadow:0 15px 40px rgba(0,0,0,0.6);
+  max-width:420px;
   width:90%;
 }
 
 /* Intro Logo */
 .intro-logo{
-  width:120px;
+  width:140px;
   margin-bottom:15px;
+}
+
+.welcome-card h1{
+  font-size:34px;
+  letter-spacing:3px;
+  margin:5px 0;
+}
+
+.welcome-card h2{
+  font-size:26px;
+  margin:5px 0 15px;
+  color:#ffb347;
+}
+
+.welcome-card p{
+  font-size:15px;
+  margin-bottom:25px;
+  opacity:0.9;
 }
 
 .start-btn{
   background:linear-gradient(to right,#ffb347,#ffcc33);
-  color:#222;
   border:none;
-  padding:14px 35px;
+  padding:12px 32px;
   border-radius:30px;
-  font-size:17px;
+  font-size:16px;
   font-weight:bold;
   cursor:pointer;
+  transition:0.3s;
+}
+
+.start-btn:hover{
+  transform:scale(1.05);
+  box-shadow:0 5px 15px rgba(255,200,80,0.6);
 }
 
 /* ================= MAIN SITE ================= */
@@ -64,13 +91,13 @@ body{
 /* HEADER */
 
 header{
-  background:#222;
+  background:#111;
   color:white;
-  padding:12px;
+  padding:15px;
   display:flex;
-  justify-content:center;
   align-items:center;
-  gap:10px;
+  justify-content:center;
+  gap:12px;
 }
 
 .header-logo{
@@ -91,17 +118,19 @@ nav a{
   font-weight:bold;
 }
 
+/* HERO */
+
 .hero{
   background:linear-gradient(to right,#ff416c,#ff4b2b);
   color:white;
   text-align:center;
-  padding:40px;
+  padding:45px 20px;
 }
 
 /* PRODUCTS */
 
 .products{
-  padding:40px;
+  padding:40px 20px;
   max-width:1200px;
   margin:auto;
 }
@@ -115,9 +144,8 @@ nav a{
 .product{
   background:white;
   border-radius:10px;
-  box-shadow:0 0 10px rgba(0,0,0,0.1);
+  box-shadow:0 0 12px rgba(0,0,0,0.1);
   text-align:center;
-  overflow:hidden;
 }
 
 .product img{
@@ -128,12 +156,12 @@ nav a{
 
 .btn{
   background:#ff9f00;
-  padding:8px 12px;
+  padding:8px 14px;
   border-radius:5px;
+  display:inline-block;
+  margin:10px;
   cursor:pointer;
   font-weight:bold;
-  margin:10px;
-  display:inline-block;
 }
 
 /* MODAL */
@@ -142,7 +170,7 @@ nav a{
   display:none;
   position:fixed;
   inset:0;
-  background:rgba(0,0,0,0.6);
+  background:rgba(0,0,0,0.7);
   justify-content:center;
   align-items:center;
 }
@@ -150,7 +178,7 @@ nav a{
 .modal-box{
   background:white;
   width:90%;
-  max-width:400px;
+  max-width:350px;
   padding:20px;
   border-radius:8px;
 }
@@ -169,14 +197,13 @@ select{
   padding:10px;
   margin-top:10px;
   font-size:16px;
-  border-radius:5px;
 }
 
 /* CONTACT */
 
 .contact{
   text-align:center;
-  padding:40px;
+  padding:40px 20px;
 }
 
 .call{background:#2196F3;color:white;}
@@ -185,7 +212,7 @@ select{
 /* MAP */
 
 .map-section{
-  padding:40px;
+  padding:40px 20px;
   background:white;
   text-align:center;
 }
@@ -193,14 +220,13 @@ select{
 iframe{
   width:100%;
   height:350px;
-  border:0;
   border-radius:10px;
 }
 
 /* FOOTER */
 
 footer{
-  background:#222;
+  background:#111;
   color:white;
   text-align:center;
   padding:15px;
@@ -211,7 +237,7 @@ footer{
 
 <body>
 
-<!-- INTRO PAGE -->
+<!-- INTRO -->
 
 <section id="welcome">
 
@@ -222,7 +248,7 @@ footer{
 <h1>MAHANYA</h1>
 <h2>CREATIONS</h2>
 
-<p>Customized Gifts & Printing Studio</p>
+<p>Perfect Gift for Your Loved One ❤️</p>
 
 <button class="start-btn" onclick="startSite()">
 Get Started →
@@ -232,13 +258,15 @@ Get Started →
 
 </section>
 
-<!-- MAIN WEBSITE -->
+<!-- MAIN -->
 
 <div id="main">
 
 <header>
+
 <img src="images/logo.png" class="header-logo">
 <h1>Mahanya Creations</h1>
+
 </header>
 
 <nav>
@@ -248,8 +276,10 @@ Get Started →
 </nav>
 
 <section class="hero">
+
 <h2>Your Memories, Our Creativity ❤️</h2>
-<p>Choose your product and customize</p>
+<p>Customize Your Gifts With Love</p>
+
 </section>
 
 <!-- PRODUCTS -->
@@ -273,14 +303,14 @@ Get Started →
 </div>
 
 <div class="product">
-<img src="https://source.unsplash.com/400x300/?mug">
+<img src="https://source.unsplash.com/400x300/?mug,print">
 <h3>Mug Printing</h3>
 <div class="btn" onclick="openModal('mug')">Customize</div>
 </div>
 
 <div class="product">
-<img src="https://source.unsplash.com/400x300/?led,signboard">
-<h3>Light Board</h3>
+<img src="https://source.unsplash.com/400x300/?led,board">
+<h3>Lighting Board</h3>
 <div class="btn" onclick="openModal('light')">Customize</div>
 </div>
 
@@ -297,7 +327,6 @@ Get Started →
 <p>📞 9391398958</p>
 
 <a href="tel:9391398958" class="btn call">Call</a>
-
 <a href="https://wa.me/919391398958" class="btn whatsapp">WhatsApp</a>
 
 </section>
@@ -308,8 +337,8 @@ Get Started →
 
 <h2>Find Us 📍</h2>
 
-<iframe 
-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3801.162272599469!2d83.2212233749421!3d17.68979278324987"
+<iframe
+src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3622.982791071367!2d83.22122337495483!3d17.689792783249935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a39692eec653e97%3A0x868815300d14f8fd!2smahanya%20creations!5e1!3m2!1sen!2sin!4v1770540742701!5m2!1sen!2sin"
 loading="lazy">
 </iframe>
 
@@ -340,8 +369,8 @@ loading="lazy">
 /* START */
 
 function startSite(){
-  document.getElementById("welcome").style.display="none";
-  document.getElementById("main").style.display="block";
+document.getElementById("welcome").style.display="none";
+document.getElementById("main").style.display="block";
 }
 
 /* MODAL */
@@ -383,7 +412,7 @@ body=`
 <option>16x24</option>
 </select>
 
-<button class="order-btn" onclick="order('Frame')">Order</button>
+<button class="order-btn" onclick="order('Photo Frame')">Order</button>
 `;
 }
 
@@ -420,7 +449,7 @@ document.getElementById("modal").style.display="flex";
 }
 
 function closeModal(){
-  document.getElementById("modal").style.display="none";
+document.getElementById("modal").style.display="none";
 }
 
 /* ORDER */
@@ -432,6 +461,7 @@ let size=document.getElementById("size")?.value || "";
 let type=document.getElementById("type")?.value || "";
 
 let msg=`Hi, I want to order:
+
 Product: ${product}
 Color: ${color}
 Size: ${size}
@@ -440,6 +470,7 @@ Type: ${type}`;
 let url="https://wa.me/919391398958?text="+encodeURIComponent(msg);
 
 window.open(url,"_blank");
+
 }
 
 </script>
