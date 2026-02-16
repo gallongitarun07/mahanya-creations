@@ -4,6 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Mahanya Creations</title>
 
 <style>
@@ -126,6 +127,16 @@ nav a{
   font-weight:bold;
 }
 
+/* TSHIRT SHOP */
+
+#tshirt-shop{
+  display:none;
+  background:#fff;
+  margin:30px auto;
+  border-radius:15px;
+  box-shadow:0 0 15px rgba(0,0,0,0.15);
+}
+
 /* CONTACT */
 
 .contact{
@@ -135,21 +146,6 @@ nav a{
 
 .call{background:#2196F3;color:white;}
 .whatsapp{background:#25D366;color:white;}
-
-/* MAP */
-
-.map-section{
-  padding:40px 20px;
-  background:white;
-  text-align:center;
-}
-
-iframe{
-  width:100%;
-  height:350px;
-  border-radius:10px;
-  border:0;
-}
 
 /* FOOTER */
 
@@ -194,7 +190,6 @@ footer{
 <nav>
 <a href="#products">Products</a>
 <a href="#contact">Contact</a>
-<a href="#map">Location</a>
 </nav>
 
 <section class="hero">
@@ -209,10 +204,12 @@ footer{
 
 <div class="product-grid">
 
+<!-- TSHIRT -->
+
 <div class="product">
 <img src="https://source.unsplash.com/400x300/?tshirt">
 <h3>T-Shirt Printing</h3>
-<div class="btn">Customize</div>
+<div class="btn" onclick="openTshirtShop()">Customize</div>
 </div>
 
 <div class="product">
@@ -227,39 +224,54 @@ footer{
 <div class="btn">Customize</div>
 </div>
 
-<div class="product">
-<img src="https://source.unsplash.com/400x300/?laser,engraving">
-<h3>Laser Printing</h3>
-<div class="btn">Customize</div>
 </div>
 
-<div class="product">
-<img src="https://source.unsplash.com/400x300/?flex,banner">
-<h3>Flex Printing</h3>
-<div class="btn">Customize</div>
+</section>
+
+
+<!-- ================= TSHIRT FILTER SHOP ================= -->
+
+<section id="tshirt-shop" style="padding:40px 20px; max-width:1200px; margin:auto;">
+
+<h2 style="text-align:center;">T-Shirt Collection</h2>
+
+<div style="display:flex; gap:25px; flex-wrap:wrap;">
+
+<!-- Filters -->
+
+<div style="width:220px;">
+
+<h3>Filters</h3>
+
+<h4>Neck Type</h4>
+
+<label><input type="checkbox" value="Round" class="neck"> Round</label><br>
+<label><input type="checkbox" value="Polo" class="neck"> Polo</label><br>
+<label><input type="checkbox" value="V-Neck" class="neck"> V-Neck</label>
+
+<h4 style="margin-top:15px;">Size</h4>
+
+<label><input type="checkbox" value="S" class="size"> S</label><br>
+<label><input type="checkbox" value="M" class="size"> M</label><br>
+<label><input type="checkbox" value="L" class="size"> L</label><br>
+<label><input type="checkbox" value="XL" class="size"> XL</label><br>
+<label><input type="checkbox" value="XXL" class="size"> XXL</label>
+
 </div>
 
-<div class="product">
-<img src="https://source.unsplash.com/400x300/?foam,board">
-<h3>Foam Board</h3>
-<div class="btn">Customize</div>
-</div>
+<!-- Products -->
 
-<div class="product">
-<img src="https://source.unsplash.com/400x300/?keychain">
-<h3>Keychain</h3>
-<div class="btn">Customize</div>
-</div>
-
-<div class="product">
-<img src="https://source.unsplash.com/400x300/?pillow,print">
-<h3>Magic Pillow</h3>
-<div class="btn">Customize</div>
+<div id="productList" style="
+flex:1;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:15px;">
 </div>
 
 </div>
 
 </section>
+
 
 <!-- CONTACT -->
 
@@ -274,20 +286,6 @@ footer{
 
 </section>
 
-<!-- MAP -->
-
-<section class="map-section" id="map">
-
-<h2>Find Us 📍</h2>
-
-<iframe
-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3622.982791071367!2d83.22122337495483!3d17.689792783249935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a39692eec653e97%3A0x868815300d14f8fd!2smahanya%20creations!5e1!3m2!1sen!2sin!4v1770540742701!5m2!1sen!2sin"
-allowfullscreen
-loading="lazy">
-</iframe>
-
-</section>
-
 <footer>
 © 2026 Mahanya Creations
 </footer>
@@ -296,9 +294,122 @@ loading="lazy">
 
 <script>
 
+/* START */
+
 function startSite(){
 document.getElementById("welcome").style.display="none";
 document.getElementById("main").style.display="block";
+}
+
+
+/* OPEN TSHIRT SHOP */
+
+function openTshirtShop(){
+
+document.getElementById("tshirt-shop").style.display="block";
+
+document.getElementById("tshirt-shop")
+.scrollIntoView({behavior:"smooth"});
+}
+
+
+/* ================= TSHIRT FILTER SHOP ================= */
+
+const tshirtProducts = [
+  { name: "Classic Round Tee", neck: "Round", sizes: ["S","M","L"], price: 499 },
+  { name: "Premium Polo T-Shirt", neck: "Polo", sizes: ["M","L","XL"], price: 799 },
+  { name: "Casual V-Neck Tee", neck: "V-Neck", sizes: ["S","L"], price: 599 },
+  { name: "Oversized Round Shirt", neck: "Round", sizes: ["XL","XXL"], price: 899 },
+  { name: "Sport Polo Shirt", neck: "Polo", sizes: ["S","M"], price: 699 }
+];
+
+const productList = document.getElementById("productList");
+
+function displayProducts(items) {
+
+  productList.innerHTML = "";
+
+  if (items.length === 0) {
+    productList.innerHTML = "<p>No products found</p>";
+    return;
+  }
+
+  items.forEach(p => {
+
+    const card = document.createElement("div");
+
+    card.style.background = "white";
+    card.style.padding = "12px";
+    card.style.borderRadius = "8px";
+    card.style.boxShadow = "0 0 8px rgba(0,0,0,0.1)";
+
+    card.innerHTML = `
+      <h4>${p.name}</h4>
+      <p>Neck: ${p.neck}</p>
+      <p>Sizes: ${p.sizes.join(", ")}</p>
+      <p><b>₹ ${p.price}</b></p>
+      <button onclick="order('${p.name}')">Order</button>
+    `;
+
+    productList.appendChild(card);
+
+  });
+}
+
+
+function getCheckedValues(className) {
+
+  return [...document.querySelectorAll("." + className + ":checked")]
+         .map(el => el.value);
+
+}
+
+
+function filterProducts() {
+
+  const neckFilters = getCheckedValues("neck");
+  const sizeFilters = getCheckedValues("size");
+
+  const filtered = tshirtProducts.filter(p => {
+
+    const neckMatch =
+      neckFilters.length === 0 || neckFilters.includes(p.neck);
+
+    const sizeMatch =
+      sizeFilters.length === 0 ||
+      p.sizes.some(s => sizeFilters.includes(s));
+
+    return neckMatch && sizeMatch;
+  });
+
+  displayProducts(filtered);
+}
+
+
+/* listeners */
+
+document.querySelectorAll(".neck, .size").forEach(el =>
+  el.addEventListener("change", filterProducts)
+);
+
+
+/* initial load */
+
+displayProducts(tshirtProducts);
+
+
+/* ORDER */
+
+function order(product){
+
+let msg=`Hi, I want to order:
+
+Product: ${product}`;
+
+let url="https://wa.me/919391398958?text="+encodeURIComponent(msg);
+
+window.open(url,"_blank");
+
 }
 
 </script>
