@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Mahanya Creations</title>
 
 <style>
 
-/* COMMON */
 body{
   margin:0;
   font-family:Arial, sans-serif;
   background:#f5f5f5;
 }
 
-/* ================= INTRO PAGE ================= */
+/* INTRO */
 
 #welcome{
   height:100vh;
@@ -34,69 +31,39 @@ body{
 
 .welcome-card{
   background:rgba(0,0,0,0.6);
-  backdrop-filter:blur(6px);
-  padding:45px 35px;
+  padding:40px;
   border-radius:20px;
-  box-shadow:0 15px 40px rgba(0,0,0,0.6);
-  max-width:420px;
-  width:90%;
 }
 
-/* Intro Logo */
 .intro-logo{
-  width:140px;
+  width:130px;
   margin-bottom:15px;
 }
 
-.welcome-card h1{
-  font-size:34px;
-  letter-spacing:3px;
-  margin:5px 0;
-}
-
-.welcome-card h2{
-  font-size:26px;
-  margin:5px 0 15px;
-  color:#ffb347;
-}
-
-.welcome-card p{
-  font-size:15px;
-  margin-bottom:25px;
-  opacity:0.9;
-}
-
 .start-btn{
-  background:linear-gradient(to right,#ffb347,#ffcc33);
+  background:#ffb347;
   border:none;
-  padding:12px 32px;
-  border-radius:30px;
-  font-size:16px;
+  padding:12px 30px;
+  border-radius:25px;
   font-weight:bold;
   cursor:pointer;
 }
 
-/* ================= MAIN SITE ================= */
+/* MAIN */
 
-#main{
-  display:none;
-}
-
-/* HEADER */
+#main{ display:none; }
 
 header{
   background:#111;
   color:white;
   padding:15px;
   display:flex;
-  align-items:center;
   justify-content:center;
-  gap:12px;
+  align-items:center;
+  gap:10px;
 }
 
-.header-logo{
-  width:45px;
-}
+.header-logo{ width:40px; }
 
 nav{
   background:#ff416c;
@@ -118,10 +85,10 @@ nav a{
   background:linear-gradient(to right,#ff416c,#ff4b2b);
   color:white;
   text-align:center;
-  padding:45px 20px;
+  padding:40px;
 }
 
-/* PRODUCTS */
+/* PRODUCTS GRID */
 
 .products{
   padding:40px 20px;
@@ -158,39 +125,34 @@ nav a{
   font-weight:bold;
 }
 
-/* MODAL */
+/* MENU CARD STYLE */
 
-.modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.7);
-  justify-content:center;
-  align-items:center;
-}
-
-.modal-box{
+.menu-card{
   background:white;
-  width:90%;
-  max-width:350px;
-  padding:20px;
-  border-radius:8px;
+  max-width:700px;
+  margin:40px auto;
+  padding:30px;
+  border-radius:15px;
+  box-shadow:0 10px 30px rgba(0,0,0,0.15);
 }
 
-select{
-  width:100%;
-  padding:8px;
-  margin:6px 0;
+.menu-card h2{
+  text-align:center;
+  margin-bottom:20px;
+  border-bottom:2px solid #ff416c;
+  padding-bottom:10px;
 }
 
-.order-btn{
-  width:100%;
-  background:#25D366;
-  color:white;
-  border:none;
-  padding:10px;
-  margin-top:10px;
+.menu-item{
+  display:flex;
+  justify-content:space-between;
+  padding:12px 0;
+  border-bottom:1px dashed #ccc;
   font-size:16px;
+}
+
+.menu-item:last-child{
+  border-bottom:none;
 }
 
 /* CONTACT */
@@ -202,22 +164,6 @@ select{
 
 .call{background:#2196F3;color:white;}
 .whatsapp{background:#25D366;color:white;}
-
-/* MAP */
-
-.map-section{
-  padding:40px 20px;
-  background:white;
-  text-align:center;
-}
-
-iframe{
-  width:100%;
-  height:350px;
-  border-radius:10px;
-}
-
-/* FOOTER */
 
 footer{
   background:#111;
@@ -232,144 +178,118 @@ footer{
 <body>
 
 <!-- INTRO -->
-
 <section id="welcome">
-
 <div class="welcome-card">
-
 <img src="images/logo.png" class="intro-logo">
-
-<h1>MAHANYA</h1>
-<h2>CREATIONS</h2>
-
-<p>Perfect Gift for Your Loved One ❤️</p>
-
-<button class="start-btn" onclick="startSite()">
-Get Started →
-</button>
-
+<h1>MAHANYA CREATIONS</h1>
+<p>Customized Gifts & Printing</p>
+<button class="start-btn" onclick="startSite()">Get Started →</button>
 </div>
-
 </section>
 
 <!-- MAIN -->
-
 <div id="main">
 
 <header>
-
 <img src="images/logo.png" class="header-logo">
-<h1>Mahanya Creations</h1>
-
+<h2>Mahanya Creations</h2>
 </header>
 
 <nav>
 <a href="#products">Products</a>
+<a href="#menu">Menu Card</a>
 <a href="#contact">Contact</a>
-<a href="#map">Location</a>
 </nav>
 
 <section class="hero">
-
 <h2>Your Memories, Our Creativity ❤️</h2>
-<p>Customize Your Gifts With Love</p>
-
 </section>
 
-<!-- PRODUCTS -->
-
+<!-- PRODUCTS GRID -->
 <section class="products" id="products">
-
-<h2>Our Products</h2>
+<h2 style="text-align:center;">Our Products</h2>
 
 <div class="product-grid">
-
-<!-- OLD -->
 
 <div class="product">
 <img src="https://source.unsplash.com/400x300/?tshirt">
 <h3>T-Shirt Printing</h3>
-<div class="btn" onclick="openModal('tshirt')">Customize</div>
+<div class="btn">Customize</div>
 </div>
 
 <div class="product">
 <img src="https://source.unsplash.com/400x300/?photo,frame">
 <h3>Photo Frame</h3>
-<div class="btn" onclick="openModal('frame')">Customize</div>
+<div class="btn">Customize</div>
 </div>
 
 <div class="product">
-<img src="https://source.unsplash.com/400x300/?mug,print">
+<img src="https://source.unsplash.com/400x300/?mug">
 <h3>Mug Printing</h3>
-<div class="btn" onclick="openModal('mug')">Customize</div>
+<div class="btn">Customize</div>
+</div>
+
+<div class="product">
+<img src="https://source.unsplash.com/400x300/?laser,engraving">
+<h3>Laser Printing</h3>
+<div class="btn">Customize</div>
+</div>
+
+<div class="product">
+<img src="https://source.unsplash.com/400x300/?flex,banner">
+<h3>Flex Printing</h3>
+<div class="btn">Customize</div>
+</div>
+
+<div class="product">
+<img src="https://source.unsplash.com/400x300/?foam,board">
+<h3>Foam Board Printing</h3>
+<div class="btn">Customize</div>
+</div>
+
+<div class="product">
+<img src="https://source.unsplash.com/400x300/?keychain">
+<h3>Keychain Printing</h3>
+<div class="btn">Customize</div>
+</div>
+
+<div class="product">
+<img src="https://source.unsplash.com/400x300/?pillow,print">
+<h3>Magic Pillow Printing</h3>
+<div class="btn">Customize</div>
 </div>
 
 <div class="product">
 <img src="https://source.unsplash.com/400x300/?led,board">
 <h3>Lighting Board</h3>
-<div class="btn" onclick="openModal('light')">Customize</div>
-</div>
-
-<!-- NEW -->
-
-<div class="product">
-<img src="https://source.unsplash.com/400x300/?laser,engraving">
-<h3>Laser Printing</h3>
-<div class="btn" onclick="openModal('laser')">Customize</div>
-</div>
-
-<div class="product">
-<img src="https://source.unsplash.com/400x300/?flex,banner,printing">
-<h3>Flex Printing</h3>
-<div class="btn" onclick="openModal('flex')">Customize</div>
-</div>
-
-<div class="product">
-<img src="https://source.unsplash.com/400x300/?foam,board,printing">
-<h3>Foam Board Printing</h3>
-<div class="btn" onclick="openModal('foam')">Customize</div>
-</div>
-
-<div class="product">
-<img src="https://source.unsplash.com/400x300/?custom,keychain">
-<h3>Keychain Printing</h3>
-<div class="btn" onclick="openModal('keychain')">Customize</div>
-</div>
-
-<div class="product">
-<img src="https://source.unsplash.com/400x300/?custom,pillow,print">
-<h3>Magic Pillow Printing</h3>
-<div class="btn" onclick="openModal('pillow')">Customize</div>
+<div class="btn">Customize</div>
 </div>
 
 </div>
+</section>
+
+<!-- MENU CARD -->
+<section id="menu" class="menu-card">
+<h2>Product Menu Card</h2>
+
+<div class="menu-item"><span>T-Shirt Printing</span><span>From ₹499</span></div>
+<div class="menu-item"><span>Photo Frame</span><span>From ₹399</span></div>
+<div class="menu-item"><span>Mug Printing</span><span>From ₹299</span></div>
+<div class="menu-item"><span>Laser Printing</span><span>From ₹199</span></div>
+<div class="menu-item"><span>Flex Printing</span><span>From ₹299</span></div>
+<div class="menu-item"><span>Foam Board Printing</span><span>From ₹249</span></div>
+<div class="menu-item"><span>Keychain Printing</span><span>From ₹99</span></div>
+<div class="menu-item"><span>Magic Pillow Printing</span><span>From ₹499</span></div>
+<div class="menu-item"><span>Lighting Board</span><span>From ₹999</span></div>
 
 </section>
 
 <!-- CONTACT -->
-
 <section class="contact" id="contact">
-
 <h2>Contact Us</h2>
-
 <p>📞 9391398958</p>
-
 <a href="tel:9391398958" class="btn call">Call</a>
 <a href="https://wa.me/919391398958" class="btn whatsapp">WhatsApp</a>
-
-</section>
-
-<!-- MAP -->
-
-<section class="map-section" id="map">
-
-<h2>Find Us 📍</h2>
-
-<iframe
-src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3622.982791071367!2d83.22122337495483!3d17.689792783249935!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a39692eec653e97%3A0x868815300d14f8fd!2smahanya%20creations!5e1!3m2!1sen!2sin!4v1770540742701!5m2!1sen!2sin"
-loading="lazy">
-</iframe>
-
 </section>
 
 <footer>
@@ -378,215 +298,11 @@ loading="lazy">
 
 </div>
 
-<!-- MODAL -->
-
-<div class="modal" id="modal">
-
-<div class="modal-box">
-
-<h3 id="modalTitle"></h3>
-<div id="modalBody"></div>
-
-<button onclick="closeModal()">Close</button>
-
-</div>
-</div>
-
 <script>
-
-/* START */
-
 function startSite(){
 document.getElementById("welcome").style.display="none";
 document.getElementById("main").style.display="block";
 }
-
-/* MODAL */
-
-function openModal(type){
-
-let title="";
-let body="";
-
-/* OLD */
-
-if(type=="tshirt"){
-title="Customize T-Shirt";
-body=`
-<label>Color</label>
-<select id="color">
-<option>Black</option>
-<option>White</option>
-<option>Red</option>
-</select>
-
-<label>Size</label>
-<select id="size">
-<option>S</option>
-<option>M</option>
-<option>L</option>
-<option>XL</option>
-</select>
-
-<button class="order-btn" onclick="order('T-Shirt')">Order</button>
-`;
-}
-
-if(type=="frame"){
-title="Customize Frame";
-body=`
-<label>Size</label>
-<select id="size">
-<option>8x10</option>
-<option>12x18</option>
-<option>16x24</option>
-</select>
-
-<button class="order-btn" onclick="order('Photo Frame')">Order</button>
-`;
-}
-
-if(type=="mug"){
-title="Customize Mug";
-body=`
-<label>Type</label>
-<select id="type">
-<option>White</option>
-<option>Magic Mug</option>
-</select>
-
-<button class="order-btn" onclick="order('Mug')">Order</button>
-`;
-}
-
-if(type=="light"){
-title="Customize Light Board";
-body=`
-<label>Size</label>
-<select id="size">
-<option>Small</option>
-<option>Medium</option>
-<option>Large</option>
-</select>
-
-<button class="order-btn" onclick="order('Light Board')">Order</button>
-`;
-}
-
-/* NEW */
-
-if(type=="laser"){
-title="Customize Laser Printing";
-body=`
-<label>Material</label>
-<select id="type">
-<option>Wood</option>
-<option>Acrylic</option>
-<option>Metal</option>
-</select>
-
-<label>Size</label>
-<select id="size">
-<option>Small</option>
-<option>Medium</option>
-<option>Large</option>
-</select>
-
-<button class="order-btn" onclick="order('Laser Printing')">Order</button>
-`;
-}
-
-if(type=="flex"){
-title="Customize Flex Printing";
-body=`
-<label>Size</label>
-<select id="size">
-<option>2x3 ft</option>
-<option>3x4 ft</option>
-<option>4x6 ft</option>
-</select>
-
-<label>Quality</label>
-<select id="type">
-<option>Normal</option>
-<option>HD</option>
-</select>
-
-<button class="order-btn" onclick="order('Flex Printing')">Order</button>
-`;
-}
-
-if(type=="foam"){
-title="Customize Foam Board";
-body=`
-<label>Size</label>
-<select id="size">
-<option>A3</option>
-<option>A2</option>
-<option>A1</option>
-</select>
-
-<button class="order-btn" onclick="order('Foam Board')">Order</button>
-`;
-}
-
-if(type=="keychain"){
-title="Customize Keychain";
-body=`
-<label>Material</label>
-<select id="type">
-<option>Acrylic</option>
-<option>Metal</option>
-</select>
-
-<button class="order-btn" onclick="order('Keychain')">Order</button>
-`;
-}
-
-if(type=="pillow"){
-title="Customize Magic Pillow";
-body=`
-<label>Color</label>
-<select id="color">
-<option>Red</option>
-<option>Blue</option>
-<option>White</option>
-</select>
-
-<button class="order-btn" onclick="order('Magic Pillow')">Order</button>
-`;
-}
-
-document.getElementById("modalTitle").innerText=title;
-document.getElementById("modalBody").innerHTML=body;
-document.getElementById("modal").style.display="flex";
-}
-
-function closeModal(){
-document.getElementById("modal").style.display="none";
-}
-
-/* ORDER */
-
-function order(product){
-
-let color=document.getElementById("color")?.value || "";
-let size=document.getElementById("size")?.value || "";
-let type=document.getElementById("type")?.value || "";
-
-let msg=`Hi, I want to order:
-
-Product: ${product}
-Color: ${color}
-Size: ${size}
-Type: ${type}`;
-
-let url="https://wa.me/919391398958?text="+encodeURIComponent(msg);
-
-window.open(url,"_blank");
-
-}
-
 </script>
 
 </body>
