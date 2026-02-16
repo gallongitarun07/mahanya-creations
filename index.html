@@ -74,12 +74,6 @@ body{
   font-size:16px;
   font-weight:bold;
   cursor:pointer;
-  transition:0.3s;
-}
-
-.start-btn:hover{
-  transform:scale(1.05);
-  box-shadow:0 5px 15px rgba(255,200,80,0.6);
 }
 
 /* ================= MAIN SITE ================= */
@@ -290,6 +284,8 @@ Get Started →
 
 <div class="product-grid">
 
+<!-- OLD -->
+
 <div class="product">
 <img src="https://source.unsplash.com/400x300/?tshirt">
 <h3>T-Shirt Printing</h3>
@@ -312,6 +308,38 @@ Get Started →
 <img src="https://source.unsplash.com/400x300/?led,board">
 <h3>Lighting Board</h3>
 <div class="btn" onclick="openModal('light')">Customize</div>
+</div>
+
+<!-- NEW -->
+
+<div class="product">
+<img src="https://source.unsplash.com/400x300/?laser,engraving">
+<h3>Laser Printing</h3>
+<div class="btn" onclick="openModal('laser')">Customize</div>
+</div>
+
+<div class="product">
+<img src="https://source.unsplash.com/400x300/?flex,banner,printing">
+<h3>Flex Printing</h3>
+<div class="btn" onclick="openModal('flex')">Customize</div>
+</div>
+
+<div class="product">
+<img src="https://source.unsplash.com/400x300/?foam,board,printing">
+<h3>Foam Board Printing</h3>
+<div class="btn" onclick="openModal('foam')">Customize</div>
+</div>
+
+<div class="product">
+<img src="https://source.unsplash.com/400x300/?custom,keychain">
+<h3>Keychain Printing</h3>
+<div class="btn" onclick="openModal('keychain')">Customize</div>
+</div>
+
+<div class="product">
+<img src="https://source.unsplash.com/400x300/?custom,pillow,print">
+<h3>Magic Pillow Printing</h3>
+<div class="btn" onclick="openModal('pillow')">Customize</div>
 </div>
 
 </div>
@@ -380,6 +408,8 @@ function openModal(type){
 let title="";
 let body="";
 
+/* OLD */
+
 if(type=="tshirt"){
 title="Customize T-Shirt";
 body=`
@@ -440,6 +470,90 @@ body=`
 </select>
 
 <button class="order-btn" onclick="order('Light Board')">Order</button>
+`;
+}
+
+/* NEW */
+
+if(type=="laser"){
+title="Customize Laser Printing";
+body=`
+<label>Material</label>
+<select id="type">
+<option>Wood</option>
+<option>Acrylic</option>
+<option>Metal</option>
+</select>
+
+<label>Size</label>
+<select id="size">
+<option>Small</option>
+<option>Medium</option>
+<option>Large</option>
+</select>
+
+<button class="order-btn" onclick="order('Laser Printing')">Order</button>
+`;
+}
+
+if(type=="flex"){
+title="Customize Flex Printing";
+body=`
+<label>Size</label>
+<select id="size">
+<option>2x3 ft</option>
+<option>3x4 ft</option>
+<option>4x6 ft</option>
+</select>
+
+<label>Quality</label>
+<select id="type">
+<option>Normal</option>
+<option>HD</option>
+</select>
+
+<button class="order-btn" onclick="order('Flex Printing')">Order</button>
+`;
+}
+
+if(type=="foam"){
+title="Customize Foam Board";
+body=`
+<label>Size</label>
+<select id="size">
+<option>A3</option>
+<option>A2</option>
+<option>A1</option>
+</select>
+
+<button class="order-btn" onclick="order('Foam Board')">Order</button>
+`;
+}
+
+if(type=="keychain"){
+title="Customize Keychain";
+body=`
+<label>Material</label>
+<select id="type">
+<option>Acrylic</option>
+<option>Metal</option>
+</select>
+
+<button class="order-btn" onclick="order('Keychain')">Order</button>
+`;
+}
+
+if(type=="pillow"){
+title="Customize Magic Pillow";
+body=`
+<label>Color</label>
+<select id="color">
+<option>Red</option>
+<option>Blue</option>
+<option>White</option>
+</select>
+
+<button class="order-btn" onclick="order('Magic Pillow')">Order</button>
 `;
 }
 
