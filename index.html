@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Mahanya Creations</title>
 
 <style>
 
+/* COMMON */
 body{
   margin:0;
   font-family:Arial, sans-serif;
@@ -88,7 +91,7 @@ nav a{
   padding:40px;
 }
 
-/* PRODUCTS GRID */
+/* PRODUCTS */
 
 .products{
   padding:40px 20px;
@@ -125,34 +128,61 @@ nav a{
   font-weight:bold;
 }
 
-/* MENU CARD STYLE */
+/* MENU BUTTON */
 
-.menu-card{
-  background:white;
-  max-width:700px;
-  margin:40px auto;
-  padding:30px;
-  border-radius:15px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.15);
+.menu-btn{
+  background:#ff416c;
+  color:white;
+  border:none;
+  padding:12px 25px;
+  border-radius:25px;
+  font-weight:bold;
+  cursor:pointer;
+  display:block;
+  margin:20px auto;
 }
 
-.menu-card h2{
+/* MENU POPUP */
+
+.menu-modal{
+  display:none;
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,0.7);
+  justify-content:center;
+  align-items:center;
+  z-index:1000;
+}
+
+.menu-box{
+  background:white;
+  width:90%;
+  max-width:400px;
+  padding:25px;
+  border-radius:15px;
+}
+
+.menu-box h2{
   text-align:center;
-  margin-bottom:20px;
-  border-bottom:2px solid #ff416c;
-  padding-bottom:10px;
+  margin-bottom:15px;
 }
 
 .menu-item{
   display:flex;
   justify-content:space-between;
-  padding:12px 0;
+  padding:8px 0;
   border-bottom:1px dashed #ccc;
-  font-size:16px;
 }
 
-.menu-item:last-child{
-  border-bottom:none;
+.menu-close{
+  background:red;
+  color:white;
+  border:none;
+  padding:8px 15px;
+  border-radius:5px;
+  margin-top:15px;
+  width:100%;
+  cursor:pointer;
 }
 
 /* CONTACT */
@@ -178,26 +208,36 @@ footer{
 <body>
 
 <!-- INTRO -->
+
 <section id="welcome">
+
 <div class="welcome-card">
+
 <img src="images/logo.png" class="intro-logo">
+
 <h1>MAHANYA CREATIONS</h1>
+
 <p>Customized Gifts & Printing</p>
+
 <button class="start-btn" onclick="startSite()">Get Started →</button>
+
 </div>
+
 </section>
 
 <!-- MAIN -->
+
 <div id="main">
 
 <header>
+
 <img src="images/logo.png" class="header-logo">
 <h2>Mahanya Creations</h2>
+
 </header>
 
 <nav>
 <a href="#products">Products</a>
-<a href="#menu">Menu Card</a>
 <a href="#contact">Contact</a>
 </nav>
 
@@ -205,8 +245,16 @@ footer{
 <h2>Your Memories, Our Creativity ❤️</h2>
 </section>
 
-<!-- PRODUCTS GRID -->
+<!-- MENU BUTTON -->
+
+<button class="menu-btn" onclick="openMenu()">
+📋 View Menu Card
+</button>
+
+<!-- PRODUCTS -->
+
 <section class="products" id="products">
+
 <h2 style="text-align:center;">Our Products</h2>
 
 <div class="product-grid">
@@ -243,53 +291,62 @@ footer{
 
 <div class="product">
 <img src="https://source.unsplash.com/400x300/?foam,board">
-<h3>Foam Board Printing</h3>
+<h3>Foam Board</h3>
 <div class="btn">Customize</div>
 </div>
 
 <div class="product">
 <img src="https://source.unsplash.com/400x300/?keychain">
-<h3>Keychain Printing</h3>
+<h3>Keychain</h3>
 <div class="btn">Customize</div>
 </div>
 
 <div class="product">
 <img src="https://source.unsplash.com/400x300/?pillow,print">
-<h3>Magic Pillow Printing</h3>
-<div class="btn">Customize</div>
-</div>
-
-<div class="product">
-<img src="https://source.unsplash.com/400x300/?led,board">
-<h3>Lighting Board</h3>
+<h3>Magic Pillow</h3>
 <div class="btn">Customize</div>
 </div>
 
 </div>
-</section>
-
-<!-- MENU CARD -->
-<section id="menu" class="menu-card">
-<h2>Product Menu Card</h2>
-
-<div class="menu-item"><span>T-Shirt Printing</span><span>From ₹499</span></div>
-<div class="menu-item"><span>Photo Frame</span><span>From ₹399</span></div>
-<div class="menu-item"><span>Mug Printing</span><span>From ₹299</span></div>
-<div class="menu-item"><span>Laser Printing</span><span>From ₹199</span></div>
-<div class="menu-item"><span>Flex Printing</span><span>From ₹299</span></div>
-<div class="menu-item"><span>Foam Board Printing</span><span>From ₹249</span></div>
-<div class="menu-item"><span>Keychain Printing</span><span>From ₹99</span></div>
-<div class="menu-item"><span>Magic Pillow Printing</span><span>From ₹499</span></div>
-<div class="menu-item"><span>Lighting Board</span><span>From ₹999</span></div>
 
 </section>
+
+<!-- MENU POPUP -->
+
+<div class="menu-modal" id="menuModal">
+
+<div class="menu-box">
+
+<h2>📋 Product Menu</h2>
+
+<div class="menu-item"><span>T-Shirt</span><span>₹499</span></div>
+<div class="menu-item"><span>Photo Frame</span><span>₹399</span></div>
+<div class="menu-item"><span>Mug</span><span>₹299</span></div>
+<div class="menu-item"><span>Laser</span><span>₹199</span></div>
+<div class="menu-item"><span>Flex</span><span>₹299</span></div>
+<div class="menu-item"><span>Foam Board</span><span>₹249</span></div>
+<div class="menu-item"><span>Keychain</span><span>₹99</span></div>
+<div class="menu-item"><span>Pillow</span><span>₹499</span></div>
+
+<button class="menu-close" onclick="closeMenu()">
+Close
+</button>
+
+</div>
+
+</div>
 
 <!-- CONTACT -->
+
 <section class="contact" id="contact">
+
 <h2>Contact Us</h2>
+
 <p>📞 9391398958</p>
+
 <a href="tel:9391398958" class="btn call">Call</a>
 <a href="https://wa.me/919391398958" class="btn whatsapp">WhatsApp</a>
+
 </section>
 
 <footer>
@@ -299,10 +356,24 @@ footer{
 </div>
 
 <script>
+
+/* START */
+
 function startSite(){
 document.getElementById("welcome").style.display="none";
 document.getElementById("main").style.display="block";
 }
+
+/* MENU */
+
+function openMenu(){
+document.getElementById("menuModal").style.display="flex";
+}
+
+function closeMenu(){
+document.getElementById("menuModal").style.display="none";
+}
+
 </script>
 
 </body>
