@@ -4,12 +4,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Mahanya Creations</title>
 
 <style>
 
-/* COMMON */
 body{
   margin:0;
   font-family:Arial, sans-serif;
@@ -128,63 +126,6 @@ nav a{
   font-weight:bold;
 }
 
-/* MENU BUTTON */
-
-.menu-btn{
-  background:#ff416c;
-  color:white;
-  border:none;
-  padding:12px 25px;
-  border-radius:25px;
-  font-weight:bold;
-  cursor:pointer;
-  display:block;
-  margin:20px auto;
-}
-
-/* MENU POPUP */
-
-.menu-modal{
-  display:none;
-  position:fixed;
-  inset:0;
-  background:rgba(0,0,0,0.7);
-  justify-content:center;
-  align-items:center;
-  z-index:1000;
-}
-
-.menu-box{
-  background:white;
-  width:90%;
-  max-width:400px;
-  padding:25px;
-  border-radius:15px;
-}
-
-.menu-box h2{
-  text-align:center;
-  margin-bottom:15px;
-}
-
-.menu-item{
-  display:flex;
-  justify-content:space-between;
-  padding:8px 0;
-  border-bottom:1px dashed #ccc;
-}
-
-.menu-close{
-  background:red;
-  color:white;
-  border:none;
-  padding:8px 15px;
-  border-radius:5px;
-  margin-top:15px;
-  width:100%;
-  cursor:pointer;
-}
-
 /* CONTACT */
 
 .contact{
@@ -233,7 +174,6 @@ footer{
 <img src="images/logo.png" class="intro-logo">
 
 <h1>MAHANYA CREATIONS</h1>
-
 <p>Customized Gifts & Printing</p>
 
 <button class="start-btn" onclick="startSite()">Get Started →</button>
@@ -247,10 +187,8 @@ footer{
 <div id="main">
 
 <header>
-
 <img src="images/logo.png" class="header-logo">
 <h2>Mahanya Creations</h2>
-
 </header>
 
 <nav>
@@ -262,12 +200,6 @@ footer{
 <section class="hero">
 <h2>Your Memories, Our Creativity ❤️</h2>
 </section>
-
-<!-- MENU BUTTON -->
-
-<button class="menu-btn" onclick="openMenu()">
-📋 View Menu Card
-</button>
 
 <!-- PRODUCTS -->
 
@@ -329,31 +261,6 @@ footer{
 
 </section>
 
-<!-- MENU POPUP -->
-
-<div class="menu-modal" id="menuModal">
-
-<div class="menu-box">
-
-<h2>📋 Product Menu</h2>
-
-<div class="menu-item"><span>T-Shirt</span><span>₹499</span></div>
-<div class="menu-item"><span>Photo Frame</span><span>₹399</span></div>
-<div class="menu-item"><span>Mug</span><span>₹299</span></div>
-<div class="menu-item"><span>Laser</span><span>₹199</span></div>
-<div class="menu-item"><span>Flex</span><span>₹299</span></div>
-<div class="menu-item"><span>Foam Board</span><span>₹249</span></div>
-<div class="menu-item"><span>Keychain</span><span>₹99</span></div>
-<div class="menu-item"><span>Pillow</span><span>₹499</span></div>
-
-<button class="menu-close" onclick="closeMenu()">
-Close
-</button>
-
-</div>
-
-</div>
-
 <!-- CONTACT -->
 
 <section class="contact" id="contact">
@@ -389,21 +296,9 @@ loading="lazy">
 
 <script>
 
-/* START */
-
 function startSite(){
 document.getElementById("welcome").style.display="none";
 document.getElementById("main").style.display="block";
-}
-
-/* MENU */
-
-function openMenu(){
-document.getElementById("menuModal").style.display="flex";
-}
-
-function closeMenu(){
-document.getElementById("menuModal").style.display="none";
 }
 
 </script>
